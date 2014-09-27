@@ -1,0 +1,135 @@
+/* 
+    chainmaillecss
+    By Chris Vergaray
+*/
+
+a:link {color:#FF0000;}      /* unvisited link */
+a:visited {color:#00FF00;}  /* visited link */
+a:hover {color:#FF00FF;}  /* mouse over link */
+a:active {color:#0000FF;}  /* selected link */
+
+@font-face {
+  font-family: "Trebuchet";
+  src: url(“fonts/Trebuchet MS.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Zelda";
+  src: url("fonts/Triforce.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Papyrus";
+  src: url("fonts/Papyrus.ttc") format("truetype");
+}
+
+h1{
+    font-family: Zelda;
+    font-weight: lighter;
+}
+
+#ContactUs{
+    text-align: left;
+    padding: 20px;
+    background-color: #19283b; /*Shade of lightsteelblue;*/
+    color: #decab0 /*Compliment of lightsteelblue*/
+}
+
+#header{height:170px;}
+
+header{ position:relative;
+        top:10px;
+        background:#000000;
+        height: auto;
+        width: 75%;
+        padding:10px;
+        margin:10px;    
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border: solid peru;
+}
+
+body{
+    background-image: url(http://cgmaille.com/images/backgrounds/body_background.gif);
+    margin:auto;
+    padding:3px;
+    font-family:fantasy;
+    line-height:160%;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+#armorLinksTable{
+    vertical-align: middle;
+    width: 500px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: black;
+}
+
+.price{
+    text-decoration: underline;
+    color: red;
+    font-style: oblique;
+}
+
+.mainContent{
+    border: solid peru;
+    background: black;
+    height: auto;
+    width: 75%;
+    padding:10px;
+    margin:10px;    
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.images{
+    position: relative;
+    left: 10px;
+    
+}
+
+.description{
+    font-family: "Trebuchet";
+    color: green;
+    padding: 20px;
+    width: 200px;
+    text-align: left;
+}
+
+.description2{
+    font-family: "Papyrus";
+    color: #ff9900;
+    padding: 20px;
+    width: 500px;
+    text-align: left;
+    font-size: 150%;
+    font-kerning: auto;
+}
+
+footer{ position:relative;
+        top:10px;
+        bottom: 10px;
+        background:#000000;
+        height: auto;
+        width: 75%;
+        padding:10px;
+        margin:10px;    
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border: solid peru;
+}
+
+.formField
+{
+   display: inline-block;
+   width: 200px;
+   text-align: right;
+}
