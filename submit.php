@@ -42,17 +42,20 @@
 	 $myfile = fopen("oldresults.txt", "a");
 	 
 	 $txt = "<div> <p> Name: " . $_POST["name"] . " <br> " . PHP_EOL;
-	 fwrite($myfile, $txt);
-	 $txt = "Major: " . $_POST["major"]  . " <br> " . PHP_EOL;
-	 fwrite($myfile, $txt);
-	 $txt = "Shows you like: <br> " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
-	 fwrite($myfile, $txt);
-	 $txt = "Here is why: " . $_POST["reasons"]  . " <br> " . PHP_EOL;
-	 fwrite($myfile, $txt);
-	 $txt = "</p> </div> <br>  <hr>  <br> " . PHP_EOL; 
+	 $txt .= "Major: " . $_POST["major"]  . " <br> " . PHP_EOL;
+	 $txt .= "Shows you like: <br> " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
+	 $txt .= "Here is why: " . $_POST["reasons"]  . " <br> " . PHP_EOL;
+	 $txt .= "</p> </div> <br>  <hr>  <br> " . PHP_EOL; 
 	 fwrite($myfile, $txt);
 	 
 	 fclose($myfile);
+         
+         // message lines should not exceed 70 characters (PHP rule), so wrap it
+         $message = wordwrap($txt, 70);
+         $subject = "Star Trek Survey";
+         $from = $_POST["name"];
+         // send mail                   
+         mail("veryoutspoken6@gmail.com",$subject,$message,"From: $from\n");
 
 	 ?>
       <div>

@@ -15,7 +15,9 @@
     <?php 
     if(empty($_SESSION["assign2_voted"]))
        $_SESSION["assign2_voted"] = "false";
-    print_r($_SESSION);
+    else if ($_SESSION["assign2_voted"] == "true")
+       echo "<h3> You've Already Voted! </h3> ";
+    //print_r($_SESSION);
     ?>
 
     <div>
