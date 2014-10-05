@@ -18,7 +18,7 @@
         Shows you like:<br>
 
         <?php
-          if(empty($_POST["shows"]))
+/*          if(empty($_POST["shows"]))
           {
             echo("You don't like any Star Trek shows.");
           }
@@ -30,7 +30,7 @@
             {
               echo($_POST["shows"][$i] . "<br>");
             }
-          }
+          }*/
           ?><br>
         This is why: <?=$_POST["reasons"] ?><br>
       
