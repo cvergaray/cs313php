@@ -41,10 +41,10 @@ session_start();
               <p>Do you like Star Trek?</p>
             </td>
             <td>
-              <input type = "radio" name = "radioButtons" value = "peor" <?php if (isset($preference) && $preference=="peor") echo "checked";?>  Not at all </input>
-              <input type = "radio" name = "radioButtons" value = "mal"> Not really </input>
-              <input type = "radio" name = "radioButtons" value = "bueno"> Kinda </input>
-              <input type = "radio" name = "radioButtons" value = "mejor"> Oh Yeah! </input>
+              <input type = "radio" name = "radioButtons" value = "peor"   <?php if (isset($preference) && $preference=="peor")  echo "checked";?> > Not at all </input>
+              <input type = "radio" name = "radioButtons" value = "mal"    <?php if (isset($preference) && $preference=="mal")   echo "checked";?> > Not really </input>
+              <input type = "radio" name = "radioButtons" value = "bueno"  <?php if (isset($preference) && $preference=="bueno") echo "checked";?> > Kinda </input>
+              <input type = "radio" name = "radioButtons" value = "mejor"  <?php if (isset($preference) && $preference=="mejor") echo "checked";?> > Oh Yeah! </input>
             </td>
           </tr>
         </table>
