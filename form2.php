@@ -43,11 +43,11 @@ value="male">Male
 
 <?php function writeFile() {
 $myfile = fopen("surveyResults.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $_SESSION["name'});
-fwrite($myfile, $_SESSION["major'});
-fwrite($myfile, $_SESSION["website'});
-fwrite($myfile, $_SESSION["comment'});
-fwrite($myfile, $_SESSION["gender'});
+fwrite($myfile, $_SESSION["name"]);
+fwrite($myfile, $_SESSION["major"]);
+fwrite($myfile, $_SESSION["website"]);
+fwrite($myfile, $_SESSION["comment"]);
+fwrite($myfile, $_SESSION["gender"]);
 fclose($myfile);
 }
 ?>
