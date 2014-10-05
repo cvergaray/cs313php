@@ -4,21 +4,20 @@ session_start();
 
 <?php
     // Handle vars
-    if (!isset($name)) $name="";
-    if (!isset($nameErr)) $nameErr = "";
-    if (!isset($email)) $email = "";
-    if (!isset($emailErr)) $emailErr = "";
-    if (!isset($major)) $major = "";
-    if (!isset($majorErr)) $majorErr = "";
-    if (!isset($places)) $places = array();
-    if (!isset($comments)) $comments = "";
+    if (!isset($_SESSION["name"])) $_SESSION["name"]="";
+    if (!isset($_SESSION["nameErr"])) $_SESSION["nameErr"] = "";
+    if (!isset($_SESSION["preference"])) $_SESSION["preference"] = "";
+    if (!isset($_SESSION["major"])) $_SESSION["major"] = "";
+    if (!isset($_SESSION["majorErr"])) $_SESSION["majorErr"] = "";
+    if (!isset($_SESSION["places"])) $_SESSION["places"] = array();
+    if (!isset($_SESSION["comments"])) $_SESSION["comments"] = "";
 ?>
 
 <h1>Star Trek Survey</h1>
 <h2>CS 313</h2>
 
     <div>
-      <form action = "" id = "form">
+      <form action = "." method="POST" id = "form">
         <table>
           <tr>
             <td>
@@ -41,35 +40,28 @@ session_start();
               <p>Do you like Star Trek?</p>
             </td>
             <td>
-              <input type = "radio" name = "radioButtons" value = "peor"   <?php if (isset($preference) && $preference=="peor")  echo "checked";?> > Not at all </input>
-              <input type = "radio" name = "radioButtons" value = "mal"    <?php if (isset($preference) && $preference=="mal")   echo "checked";?> > Not really </input>
-              <input type = "radio" name = "radioButtons" value = "bueno"  <?php if (isset($preference) && $preference=="bueno") echo "checked";?> > Kinda </input>
-              <input type = "radio" name = "radioButtons" value = "mejor"  <?php if (isset($preference) && $preference=="mejor") echo "checked";?> > Oh Yeah! </input>
+              <input type = "radio" name = "radioButtons" value = "peor"   
+	       <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="peor")  echo "checked";?> > Not at all </input>
+              
+	      <input type = "radio" name = "radioButtons" value = "mal"    
+	       <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="mal")   echo "checked";?> > Not really </input>
+              
+	      <input type = "radio" name = "radioButtons" value = "bueno"  
+	       <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="bueno") echo "checked";?> > Kinda </input>
+              
+	      <input type = "radio" name = "radioButtons" value = "mejor"  
+	       <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="mejor") echo "checked";?> > Oh Yeah! </input>
             </td>
           </tr>
         </table>
 
         <p>Which Star Trek series do you like? &nbsp
-          <input type = "checkbox" name = "TOS" value = "tos"> TOS </input>
-          <input type = "checkbox" name = "TAS" value = "tas"> TAS </input>
-          <input type = "checkbox" name = "TNG" value = "tos"> TNG </input>
-          <input type = "checkbox" name = "DS9" value = "ds9"> DS9 </input>
-          <input type = "checkbox" name = "VOY" value = "voy"> VOY </input>
-          <input type = "checkbox" name = "ENT" value = "ent"> ENT </input>
-        </p>
-
-        <p>
-          <label> How many of the previous acronyms do you know the meaning of?
-            <select name = "acronymns">
-              <option> None </option>              
-              <option> One </option>
-              <option> Two </option>
-              <option> Three </option>
-              <option> Four </option>
-              <option> Five </option>
-              <option> Six </option>
-            </select>
-          </label>
+          <input type = "checkbox" name = "TOS" value = "tos" <?php if (in_array("tos", $_SESSION["shows"])) echo "checked"; ?> > TOS </input>
+          <input type = "checkbox" name = "TAS" value = "tas" <?php if (in_array("tas", $_SESSION["shows"])) echo "checked"; ?> > TAS </input>
+          <input type = "checkbox" name = "TNG" value = "tns" <?php if (in_array("tng", $_SESSION["shows"])) echo "checked"; ?> > TNG </input>
+          <input type = "checkbox" name = "DS9" value = "ds9" <?php if (in_array("ds9", $_SESSION["shows"])) echo "checked"; ?> > DS9 </input>
+          <input type = "checkbox" name = "VOY" value = "voy" <?php if (in_array("voy", $_SESSION["shows"])) echo "checked"; ?> > VOY </input>
+          <input type = "checkbox" name = "ENT" value = "ent" <?php if (in_array("ent", $_SESSION["shows"])) echo "checked"; ?> > ENT </input>
         </p>
 
         <p>
@@ -78,14 +70,14 @@ session_start();
                       rows = "5"  
                       cols = "90"
                       placeholder = "Please explain why you do or do not like Star Trek here"
-                      background-color = "#9999ff"></textarea> 
-                           <!--lcars light blue-->
+                      </textarea> 
           </label>
         </p>
 
         <br/>
         <input type = "submit" value = "Submit Form"/>
-        <input type = "reset" value = "Clear Form"/>        
+        <input type = "reset"  value = "Clear Form"/>        
+        <input type = "hidden" value = "submit" name = "action"
         <br/>
         <br/>
       </form>
