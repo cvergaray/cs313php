@@ -23,8 +23,8 @@ fwrite($myfile, $_SESSION["website"]);
 fwrite($myfile, $_SESSION["comment"]);
 fwrite($myfile, $_SESSION["gender"]);
 fclose($myfile);
-header("results2.php");
-exit();
+//header("results2.php");
+//exit();
 }
 ?>
 
