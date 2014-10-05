@@ -6,7 +6,7 @@ session_start();
 
 <?php
 // Set session variables
- if (!isset($_SESSION["name"]) $_SESSION["name"] = "";
+if (!isset($_SESSION["name"]) $_SESSION["name"] = "";
 if (!isset($_SESSION["major"]) $_SESSION["major"] = "";
 if (!isset($_SESSION["website"]) $_SESSION["website"] = "";
 if (!isset($_SESSION["comment"]) $_SESSION["comment"] = "";

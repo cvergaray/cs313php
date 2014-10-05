@@ -39,7 +39,7 @@
          $_SESSION["assign2_voted"] = "true";
 	 //print_r($_SESSION);
 
-	 $myfile = fopen("oldresults.txt", "a+") or die("Unable to open file!");
+	 $myfile = fopen("oldresults.txt", "a");
 	 
 	 $txt = "<div> <p> Name: " . $_POST["name"] . PHP_EOL;
 	 fwrite($myfile, $txt);
@@ -49,7 +49,7 @@
 	 fwrite($myfile, $txt);
 	 $txt = "Here is why: " . $_POST["resons"] . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "</p> </div> <br>  <hr>  <br> " . PHP_EOL 
+	 $txt = "</p> </div> <br>  <hr>  <br> " . PHP_EOL; 
 	 fwrite($myfile, $txt);
 	 
 	 fclose($myfile);
