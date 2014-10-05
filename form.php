@@ -18,7 +18,7 @@
     ?>
 
     <div>
-      <form action = "results.php" method="POST">
+      <form action = "submit.php" method="POST">
 	<table>
           <tr>
             <td>
