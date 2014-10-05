@@ -71,16 +71,14 @@
 	<input type = "submit" value = "Submit Form"/>
       </form>
       <hr/><br/>
+      
+      <form action="<?php session_unset(); ?>">
+         <button name="unset" type="submit" value="unset">Reset Session</button>
+      </form>
+      
+      <a href="http://php-cvergara.rhcloud.com/results.php">See all Results!</a>
 
-        <?php
-        function cleanInput($input) {
-          $input = trim($input);
-          $input = stripslashes($input);
-          $input = htmlspecialchars($input);
-          return $input;
-        }
-        ?>
-
+      
     </div>
   </body>
 </html>
