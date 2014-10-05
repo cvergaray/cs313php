@@ -10,7 +10,7 @@ session_start();
     if (!isset($_SESSION["major"])) $_SESSION["major"] = "";
     if (!isset($_SESSION["majorErr"])) $_SESSION["majorErr"] = "";
     if (!isset($_SESSION["places"])) $_SESSION["places"] = array();
-    if (!isset($_SESSION["comments"])) $_SESSION["comments"] = "";
+    if (!isset($_SESSION["reasons"])) $_SESSION["reasons"] = "";
 ?>
 
 <h1>Star Trek Survey</h1>
@@ -70,6 +70,7 @@ session_start();
                       rows = "5"  
                       cols = "90"
                       placeholder = "Please explain why you do or do not like Star Trek here">
+		      <?=_SESSION["reasons"]?>
                       </textarea> 
           </label>
         </p>
