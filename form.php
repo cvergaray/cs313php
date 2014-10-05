@@ -69,7 +69,7 @@ session_start();
             <textarea name = "Reasons"  
                       rows = "5"  
                       cols = "90"
-                      placeholder = "Please explain why you do or do not like Star Trek here"
+                      placeholder = "Please explain why you do or do not like Star Trek here">
                       </textarea> 
           </label>
         </p>
