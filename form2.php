@@ -23,8 +23,6 @@ fwrite($myfile, $_SESSION["website"]);
 fwrite($myfile, $_SESSION["comment"]);
 fwrite($myfile, $_SESSION["gender"]);
 fclose($myfile);
-//header("location: http://php-cvergara.rhcloud.com/results2.php");
-//exit();
 }
 ?>
 
