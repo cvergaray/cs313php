@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,43 +10,33 @@
   </head>
 
 
-<?php
-session_start();
-?>
-
-<?php
-    // Handle vars
-    if (!isset($_SESSION["name"])) $_SESSION["name"]="";
-    if (!isset($_SESSION["nameErr"])) $_SESSION["nameErr"] = "";
-    if (!isset($_SESSION["preference"])) $_SESSION["preference"] = "";
-    if (!isset($_SESSION["major"])) $_SESSION["major"] = "";
-    if (!isset($_SESSION["majorErr"])) $_SESSION["majorErr"] = "";
-    if (!isset($_SESSION["shows"])) $_SESSION["shows"] = array();
-    if (!isset($_SESSION["reasons"])) $_SESSION["reasons"] = "";
-?>
-
     <body>
     <h1>Star Trek Survey</h1>
     <h2>CS 313</h2>
-        Name: <?php echo $_SESSION["name"]; ?><br><br>
-        Major: <?php echo $_SESSION["major"]; ?><br><br>
+        Name: <?php echo $_POST["name"]; ?><br><br>
+        Major: <?php echo $_POST["major"]; ?><br><br>
         Shows you like:<br> 
 
         <?php
-          if(empty($_SESSION["shows"])) 
+          if(empty($_POST["shows"])) 
           {
             echo("You don't like any Star Trek shows.");
           } 
           else
           {
-            $count = count($_SESSION["shows"]);
+            $count = count($_POST["shows"]);
 
             for($i=0; $i < $count; $i++)
             {
-              echo($_SESSION["shows"][$i] . "<BR>");
+              echo($_POST["shows"][$i] . "<br>");
             }
           }
           ?><br>
-        This is why: <?=$_SESSION["reasons"] ?><br>
+        This is why: <?=$_POST["reasons"] ?><br>
+
+     <?php
+     echo readfile("oldresults.txt");
+     ?>
+
   </body>
 </html>
