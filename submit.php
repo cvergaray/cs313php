@@ -18,19 +18,19 @@
         Shows you like:<br>
 
         <?php
-/*          if(empty($_POST["shows"]))
-          {
-            echo("You don't like any Star Trek shows.");
-          }
-          else
-          {
-            $count = count($_POST["shows"]);
-
-            for($i=0; $i < $count; $i++)
-            {
-              echo($_POST["shows"][$i] . "<br>");
-            }
-          }*/
+          if(!empty($_POST["TOS"]))
+             $_SESSION["Shows"] .= "The Original Series ";
+          if(!empty($_POST["TAS"]))
+             $_SESSION["Shows"] .= "The Animated Series ";
+          if(!empty($_POST["TNG"]))
+             $_SESSION["Shows"] .= "The Next Generation ";
+          if(!empty($_POST["DS9"]))
+             $_SESSION["Shows"] .= "Deep Space 9 ";          
+          if(!empty($_POST["VOY"]))
+             $_SESSION["Shows"] .= "Voyager ";
+          if(!empty($_POST["ENT"]))
+             $_SESSION["Shows"] .= "Enterprise ";             
+          echo($_SESSION["shows"][$i] . "<br>");
           ?><br>
         This is why: <?=$_POST["reasons"] ?><br>
       
@@ -41,13 +41,13 @@
 
 	 $myfile = fopen("oldresults.txt", "a");
 	 
-	 $txt = "<div> <p> Name: " . $_POST["name"] . PHP_EOL;
+	 $txt = "<div> <p> Name: " . $_POST["name"] . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "Major: " . $_POST["major"] . PHP_EOL;
+	 $txt = "Major: " . $_POST["major"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "Shows you like: " . $_POST["shows"] . PHP_EOL;
+	 $txt = "Shows you like: " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "Here is why: " . $_POST["resons"] . PHP_EOL;
+	 $txt = "Here is why: " . $_POST["resons"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
 	 $txt = "</p> </div> <br>  <hr>  <br> " . PHP_EOL; 
 	 fwrite($myfile, $txt);
