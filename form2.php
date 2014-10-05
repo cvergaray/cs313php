@@ -15,6 +15,19 @@ $_SESSION["gender"] = "";
 echo "Session variables are set.";
 ?>
 
+<?php function writeFile() {
+$myfile = fopen("surveyResults.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $_SESSION["name"]);
+fwrite($myfile, $_SESSION["major"]);
+fwrite($myfile, $_SESSION["website"]);
+fwrite($myfile, $_SESSION["comment"]);
+fwrite($myfile, $_SESSION["gender"]);
+fclose($myfile);
+header("results2.php");
+exit();
+}
+?>
+
 <form method="POST" action="<?php writeFile();?>">
 
 Name: <input type="text" name="name" value="<?php echo $_SESSION["name"];?>">
@@ -39,19 +52,6 @@ value="male">Male
 
    <input type="submit" name="submit" value="Submit"> 
 </form>
-
-<?php function writeFile() {
-$myfile = fopen("surveyResults.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $_SESSION["name"]);
-fwrite($myfile, $_SESSION["major"]);
-fwrite($myfile, $_SESSION["website"]);
-fwrite($myfile, $_SESSION["comment"]);
-fwrite($myfile, $_SESSION["gender"]);
-fclose($myfile);
-header("results2.php");
-exit();
-}
-?>
 
 </body>
 </html>
