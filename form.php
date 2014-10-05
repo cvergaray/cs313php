@@ -17,7 +17,7 @@
   <h2>CS 313</h2>
   
   <div>
-    <form action = "." method="POST" id = "form">
+    <form action = "." method="POST">
       <table>
         <tr>
           <td>
@@ -79,8 +79,6 @@
       <input type = "submit" value = "Submit Form"/>
       <input type = "reset"  value = "Clear Form"/>        
       <input type = "hidden" value = "submit" name = "action"/>
-             <br/>
-             <br/>
     </form>
     <hr/><br/>
   </div>
