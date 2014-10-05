@@ -17,7 +17,7 @@
                 $action = $_GET["action"];
         }
         
-    $shows = array();
+    $_SESSION["shows"] = array();
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
