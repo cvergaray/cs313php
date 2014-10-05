@@ -1,55 +1,85 @@
-<?php
-// Start the session
-session_start();
+<?php	
+   session_start();
 ?>
+
 <html>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Star Trek Survey</title>
+  </head>
 
-<?php
-// Set session variables
-$_SESSION["name"] = "";
-$_SESSION["major"] = "";
-$_SESSION["website"] = "";
-$_SESSION["comment"] = "";
-$_SESSION["gender"] = "";
-echo "Session variables are set.";
-?>
+  <body>  
+    <h1>Star Trek Survey</h1>
+    <h2>CS 313</h2>
 
-<?php function writeFile() {
-$myfile = fopen("surveyResults.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $_SESSION["name"]);
-fwrite($myfile, $_SESSION["major"]);
-fwrite($myfile, $_SESSION["website"]);
-fwrite($myfile, $_SESSION["comment"]);
-fwrite($myfile, $_SESSION["gender"]);
-fclose($myfile);
-}
-?>
+    <?php 
+    if(empty($_SESSION["assign2_voted"]))
+       $_SESSION["assign2_voted"] = "false";
+    print_r($_SESSION);
+    ?>
 
-<form method="POST" action="<?php writeFile();?>">
+    <div>
+      <form action = "submit.php" method="POST">
+	<table>
+          <tr>
+            <td>
+              Name: 
+            </td>
+            <td>
+              <input type = "text" size = "60" name = "name"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Major: 
+            </td>
+            <td>
+              <input type = "text" size = "60" name = "major"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Do you like Star Trek?</p>
+            </td>
+            <td>
+              <input type = "radio" name = "radioButtons" value = "1"> Not at all </input>              
+	      <input type = "radio" name = "radioButtons" value = "2"> Not really </input>              
+	      <input type = "radio" name = "radioButtons" value = "3"> Kinda </input>              
+	      <input type = "radio" name = "radioButtons" value = "4"> Oh Yeah! </input>
+            </td>
+          </tr>
+	</table>
+	
+	<p>Which Star Trek series do you like? &nbsp
+          <input type = "checkbox" name = "TOS" value = "tos"> TOS </input>
+          <input type = "checkbox" name = "TAS" value = "tas"> TAS </input>
+          <input type = "checkbox" name = "TNG" value = "tns"> TNG </input>
+          <input type = "checkbox" name = "DS9" value = "ds9"> DS9 </input>
+          <input type = "checkbox" name = "VOY" value = "voy"> VOY </input>
+          <input type = "checkbox" name = "ENT" value = "ent"> ENT </input>
+	</p>
+	
+	<p>
+          <label>
+            <textarea name = "reasons"  
+                      rows = "5"  
+                      cols = "90"
+                      placeholder = "Please explain why you do or do not like Star Trek here"></textarea> 
+          </label>
+	</p>
+	
+	<br/>
+	<input type = "submit" value = "Submit Form"/>
+      </form>
+      <hr/><br/>
+      
+      <form action="<?php session_unset(); ?>">
+         <button name="unset" type="submit" value="unset">Reset Session</button>
+      </form>
+      
+      <a href="http://php-cvergara.rhcloud.com/results.php">See all Results!</a>
 
-Name: <input type="text" name="name" value="<?php echo $_SESSION["name"];?>">
-<br/>
-
-Major: <input type="text" name="email" value="<?php echo $_SESSION["major"];?>">
-<br/>
-
-Show: <input type="text" name="website" value="<?php echo $_SESSION["website"];?>">
-<br/>
-
-Comment: <textarea name="comment" rows="5" cols="40"><?php echo $_SESSION["comment"];?></textarea>
-<br/>
-
-Gender:
-<input type="radio" name="gender"
-<?php if (isset($gender) && $gender=="female") echo "checked";?>
-value="female">Female
-<input type="radio" name="gender"
-<?php if (isset($gender) && $gender=="male") echo "checked";?>
-value="male">Male
-
-   <input type="submit" name="submit" value="Submit"> 
-</form>
-
-</body>
+      
+    </div>
+  </body>
 </html>
