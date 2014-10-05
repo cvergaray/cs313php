@@ -18,7 +18,7 @@
     ?>
 
     <div>
-      <form action = "." method="POST">
+      <form action = "results.php" method="POST">
 	<table>
           <tr>
             <td>
@@ -63,8 +63,7 @@
             <textarea name = "Reasons"  
                       rows = "5"  
                       cols = "90"
-                      placeholder = "Please explain why you do or do not like Star Trek here">
-            </textarea> 
+                      placeholder = "Please explain why you do or do not like Star Trek here"></textarea> 
           </label>
 	</p>
 	
