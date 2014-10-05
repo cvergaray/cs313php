@@ -15,7 +15,7 @@
 
         Name: <?php echo $_POST["name"]; ?><br><br>
         Major: <?php echo $_POST["major"]; ?><br><br>
-        Shows you like:<br>
+        Shows you like: <br> <br>
 
         <?php
           if(!empty($_POST["TOS"]))
@@ -30,7 +30,7 @@
              $_SESSION["shows"] .= "Voyager " . " <br> ";
           if(!empty($_POST["ENT"]))
              $_SESSION["shows"] .= "Enterprise " . " <br> ";             
-          echo($_SESSION["shows"][$i] . "<br>");
+          echo($_SESSION["shows"] . "<br>");
           ?><br>
         This is why: <?=$_POST["reasons"] ?><br>
       
@@ -45,7 +45,7 @@
 	 fwrite($myfile, $txt);
 	 $txt = "Major: " . $_POST["major"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "Shows you like: " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
+	 $txt = "Shows you like: <br> " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
 	 $txt = "Here is why: " . $_POST["reasons"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
@@ -56,8 +56,7 @@
 
 	 ?>
       <div>
-	<div id="section">
-	  <h1>Your response has been recorded!</h1>
+	<div>
 	  <br/>
 	  <a href="http://php-cvergara.rhcloud.com/results.php">See all Results!</a>
 	</div>
