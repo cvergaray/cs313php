@@ -1,14 +1,31 @@
+<?php	
+session_start();
+?>
+
+<?php
+    // Handle vars
+    if (!isset($name)) $name="";
+    if (!isset($nameErr)) $nameErr = "";
+    if (!isset($email)) $email = "";
+    if (!isset($emailErr)) $emailErr = "";
+    if (!isset($major)) $major = "";
+    if (!isset($majorErr)) $majorErr = "";
+    if (!isset($places)) $places = array();
+    if (!isset($comments)) $comments = "";
+?>
+
+<h1>Star Trek Survey</h1>
+<h2>CS 313</h2>
+
     <div>
       <form action = "" id = "form">
-        <br/><hr></hr>
-        <h2>Star Trek Survey</h2>
         <table>
           <tr>
             <td>
               Name: 
             </td>
             <td>
-              <input type = "text" size = "60" name = "name"/>
+              <input type = "text" size = "60" name = "name" value="<?=$name ?>"/> <?= $nameErr?>
             </td>
           </tr>
           <tr>
@@ -16,7 +33,7 @@
               Major: 
             </td>
             <td>
-              <input type = "text" size = "60" name = "major"/>
+              <input type = "text" size = "60" name = "major" value=<?=$major ?>"/> <?= $majorErr?>
             </td>
           </tr>
           <tr>
@@ -24,7 +41,7 @@
               <p>Do you like Star Trek?</p>
             </td>
             <td>
-              <input type = "radio" name = "radioButtons" value = "peor"> Not at all </input>
+              <input type = "radio" name = "radioButtons" value = "peor" <?php if (isset($preference) && $preference=="peor") echo "checked";?>  Not at all </input>
               <input type = "radio" name = "radioButtons" value = "mal"> Not really </input>
               <input type = "radio" name = "radioButtons" value = "bueno"> Kinda </input>
               <input type = "radio" name = "radioButtons" value = "mejor"> Oh Yeah! </input>
