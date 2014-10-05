@@ -15,7 +15,7 @@ $_SESSION["gender"] = "";
 echo "Session variables are set.";
 ?>
 
-<form method="post" action="<?php writeFile();?>">
+<form method="POST" action="POST">
 
 Name: <input type="text" name="name" value="<?php echo $_SESSION["name"];?>">
 <br/>
@@ -38,6 +38,7 @@ value="female">Female
 value="male">Male
 
    <input type="submit" name="submit" value="Submit"> 
+   <input type="button" name="submit" value="Submit" action="<?php writeFile();?>"
 </form>
 
 <?php function writeFile() {
