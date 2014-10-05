@@ -1,20 +1,8 @@
-    <div style = "font-family: 'Palatino Linotype';
-                  width: 800px; 
-                  margin: auto; 
-                  text-align: left; 
-                  pad: 10px">
+    <div>
       <form action = "" id = "form">
         <br/><hr></hr>
-        <h2 style = "text-align: center; font-family: 'Times New Roman';">
-          Star Trek Survey
-          <br/>
-        </h2>
-        <table style = "text-align: left;
-                        width: 700px;
-                        cellpadding = '7px'; 
-                        margin: auto;
-                        background-color: #ff9966">
-                       <!--lcars orange-->
+        <h2>Star Trek Survey</h2>
+        <table>
           <tr>
             <td>
               Name: 
