@@ -76,7 +76,6 @@
                       rows = "5"  
                       cols = "90"
                       placeholder = "Please explain why you do or do not like Star Trek here">
-	      <?echo _SESSION["reasons"]?>
             </textarea> 
           </label>
 	</p>
