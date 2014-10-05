@@ -2,9 +2,11 @@
 // Start the session
 session_start();
 ?>
+
 <html>
 <body>
 
+<p>
 Name: <? php echo $_SESSION["name"];?>
 <br/>
 
@@ -19,5 +21,6 @@ Comment: <?php echo $_SESSION["comment"];?>
 
 Gender: <?php echo $_SESSION["gender"];?>
 
+</p>
 </body>
 </html>
