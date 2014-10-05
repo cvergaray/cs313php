@@ -19,17 +19,17 @@
 
         <?php
           if(!empty($_POST["TOS"]))
-             $_SESSION["Shows"] .= "The Original Series ";
+             $_SESSION["shows"] .= "The Original Series ";
           if(!empty($_POST["TAS"]))
-             $_SESSION["Shows"] .= "The Animated Series ";
+             $_SESSION["shows"] .= "The Animated Series ";
           if(!empty($_POST["TNG"]))
-             $_SESSION["Shows"] .= "The Next Generation ";
+             $_SESSION["shows"] .= "The Next Generation ";
           if(!empty($_POST["DS9"]))
-             $_SESSION["Shows"] .= "Deep Space 9 ";          
+             $_SESSION["shows"] .= "Deep Space 9 ";          
           if(!empty($_POST["VOY"]))
-             $_SESSION["Shows"] .= "Voyager ";
+             $_SESSION["shows"] .= "Voyager ";
           if(!empty($_POST["ENT"]))
-             $_SESSION["Shows"] .= "Enterprise ";             
+             $_SESSION["shows"] .= "Enterprise ";             
           echo($_SESSION["shows"][$i] . "<br>");
           ?><br>
         This is why: <?=$_POST["reasons"] ?><br>
@@ -47,7 +47,7 @@
 	 fwrite($myfile, $txt);
 	 $txt = "Shows you like: " . $_SESSION["shows"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
-	 $txt = "Here is why: " . $_POST["resons"]  . " <br> " . PHP_EOL;
+	 $txt = "Here is why: " . $_POST["reasons"]  . " <br> " . PHP_EOL;
 	 fwrite($myfile, $txt);
 	 $txt = "</p> </div> <br>  <hr>  <br> " . PHP_EOL; 
 	 fwrite($myfile, $txt);
