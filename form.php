@@ -33,7 +33,7 @@ session_start();
               Major: 
             </td>
             <td>
-              <input type = "text" size = "60" name = "major" value=<?=$major ?>"/> <?= $majorErr?>
+              <input type = "text" size = "60" name = "major" value="<?=$major ?>"/> <?= $majorErr?>
             </td>
           </tr>
           <tr>
