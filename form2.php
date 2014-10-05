@@ -7,18 +7,24 @@ session_start();
 
 <?php
 // Set session variables
-$_SESSION["name"] = "green";
-$_SESSION["email"] = "cat";
+$_SESSION["name"] = "";
+$_SESSION["major"] = "";
 echo "Session variables are set.";
 ?>
 
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
 Name: <input type="text" name="name" value="<?php echo $_SESSION["name"];?>">
+<br/>
 
-E-mail: <input type="text" name="email" value="<?php echo $_SESSION["email"];?>">
+Major: <input type="text" name="email" value="<?php echo $_SESSION["major"];?>">
+<br/>
 
-Website: <input type="text" name="website" value="<?php echo $_SESSION["website"];?>">
+Show: <input type="text" name="website" value="<?php echo $_SESSION["website"];?>">
+<br/>
 
 Comment: <textarea name="comment" rows="5" cols="40"><?php echo $_SESSION["comment"];?></textarea>
+<br/>
 
 Gender:
 <input type="radio" name="gender"
@@ -28,6 +34,8 @@ value="female">Female
 <?php if (isset($gender) && $gender=="male") echo "checked";?>
 value="male">Male
 
+   <input type="submit" name="submit" value="Submit"> 
+</form>
 
 </body>
 </html>
