@@ -5,7 +5,7 @@
         <title>Star Trek Survey</title>
     </head>
     <?php
-    $action = "none";
+    $_SESSION["action"] = "none";
     
     // Get Vars
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -56,7 +56,7 @@
     
     <body>
         <?php
-            switch ($action)
+            switch ($_SESSION["action"])
             {
                 case "submit":
                     if (isset($nameErr) || isset($emailErr) || isset($majorErr))

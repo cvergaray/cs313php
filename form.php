@@ -81,7 +81,7 @@
       <br/>
       <input type = "submit" value = "Submit Form"/>
       <input type = "reset"  value = "Clear Form"/>        
-      <input type = "hidden" value = "submit" name = "action"
+      <input type = "hidden" value = "submit" name = "action"/>
              <br/>
              <br/>
     </form>
