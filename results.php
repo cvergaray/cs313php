@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Star Trek Survey</title>
+  </head>
+
+
 <?php
 session_start();
 ?>

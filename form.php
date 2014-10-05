@@ -13,7 +13,6 @@
     if (!isset($_SESSION["reasons"])) $_SESSION["reasons"] = "";
 ?>
 
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
