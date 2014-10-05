@@ -2,14 +2,27 @@
    session_start();
    ?>
 
+<?php
+    // Handle vars
+    if (!isset($_SESSION["name"])) $_SESSION["name"]="";
+    if (!isset($_SESSION["nameErr"])) $_SESSION["nameErr"] = "";
+    if (!isset($_SESSION["preference"])) $_SESSION["preference"] = "";
+    if (!isset($_SESSION["major"])) $_SESSION["major"] = "";
+    if (!isset($_SESSION["majorErr"])) $_SESSION["majorErr"] = "";
+    if (!isset($_SESSION["shows"])) $_SESSION["shows"] = array();
+    if (!isset($_SESSION["reasons"])) $_SESSION["reasons"] = "";
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Star Trek Survey</title>
   </head>
-  
+
   <body>  
+    <h1>Star Trek Survey</h1>
+    <h2>CS 313</h2>
     <div>
       <form action = "." method="POST">
 	<table>
@@ -71,8 +84,6 @@
 	
 	<br/>
 	<input type = "submit" value = "Submit Form"/>
-	<input type = "reset"  value = "Clear Form"/>
-
       </form>
       <hr/><br/>
 
