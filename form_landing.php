@@ -56,6 +56,9 @@
     
     <body>
         <?php
+
+	   include "form.php";
+
             switch ($_SESSION["action"])
             {
                 case "submit":
