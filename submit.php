@@ -19,17 +19,17 @@
 
         <?php
           if(!empty($_POST["TOS"]))
-             $_SESSION["shows"] .= "The Original Series ";
+             $_SESSION["shows"] .= "The Original Series " . " <br> ";
           if(!empty($_POST["TAS"]))
-             $_SESSION["shows"] .= "The Animated Series ";
+             $_SESSION["shows"] .= "The Animated Series " . " <br> ";
           if(!empty($_POST["TNG"]))
-             $_SESSION["shows"] .= "The Next Generation ";
+             $_SESSION["shows"] .= "The Next Generation " . " <br> ";
           if(!empty($_POST["DS9"]))
-             $_SESSION["shows"] .= "Deep Space 9 ";          
+             $_SESSION["shows"] .= "Deep Space 9 " . " <br> ";          
           if(!empty($_POST["VOY"]))
-             $_SESSION["shows"] .= "Voyager ";
+             $_SESSION["shows"] .= "Voyager " . " <br> ";
           if(!empty($_POST["ENT"]))
-             $_SESSION["shows"] .= "Enterprise ";             
+             $_SESSION["shows"] .= "Enterprise " . " <br> ";             
           echo($_SESSION["shows"][$i] . "<br>");
           ?><br>
         This is why: <?=$_POST["reasons"] ?><br>

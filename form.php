@@ -13,7 +13,8 @@
     <h2>CS 313</h2>
 
     <?php 
-    $_SESSION["assign2_voted"] = "false";
+    if(empty($_SESSION["assign2_voted"]))
+       $_SESSION["assign2_voted"] = "false";
     print_r($_SESSION);
     ?>
 
