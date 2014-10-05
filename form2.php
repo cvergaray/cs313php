@@ -15,7 +15,7 @@ $_SESSION["gender"] = "";
 echo "Session variables are set.";
 ?>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="results2.php">
 
 Name: <input type="text" name="name" value="<?php echo $_SESSION["name"];?>">
 <br/>
