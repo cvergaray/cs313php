@@ -2,6 +2,10 @@
 <html>
 
 <?php
+session_start();
+?>
+
+<?php
     // Handle vars
     if (!isset($_SESSION["name"])) $_SESSION["name"]="";
     if (!isset($_SESSION["nameErr"])) $_SESSION["nameErr"] = "";
