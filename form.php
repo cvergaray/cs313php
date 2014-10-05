@@ -1,3 +1,7 @@
+<?php	
+   session_start();
+   ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,10 +9,6 @@
     <title>Star Trek Survey</title>
   </head>
   
-//  <?php	
-//     session_start();
-//     ?>
-
   <body>  
     <div>
       <form action = "." method="POST">
