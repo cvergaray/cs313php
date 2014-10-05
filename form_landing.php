@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Star Trek Survey</title>
     </head>
     <?php
     $action = "none";
@@ -23,9 +17,7 @@ and open the template in the editor.
                 $action = $_GET["action"];
         }
         
-    //$name = $email = $major = $comments = "";
-    //$nameErr = $emailErr = $majorErr = "";
-    $places = array();
+    $shows = array();
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -38,26 +30,23 @@ and open the template in the editor.
                 $nameErr = "Only letters and white space allowed";
             }            
         }
-        // Check for/get Email from form
-        if (empty($_POST["email"])) {
-            $emailErr = "*Email is required";
-        } else {
-            $email = cleanInput($_POST["email"]);
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "*Invalid email format";
-            }
-        }
         // Check for/get Major from form
         if (empty($_POST["major"])) {
             $majorErr = "*Major is required";
         } else {
             $major = cleanInput($_POST["major"]);
         }
-        // Check for/get 'places'
-        if (empty($_POST["places"])) {
-            $places = array();
+        // Check for/get 'preference'
+        if (empty($_POST["preference"])) {
+            $preferenceErr = "*Please Specify a preference";
         } else {
-            $places = $_POST['places'];
+            $preferences = $_POST['places'];
+        }
+        // Check for/get 'shows'
+        if (empty($_POST["shows"])) {
+            $shows = array();
+        } else {
+            $shows = $_POST['places'];
         }
         // Get Comments from form
         $comments = cleanInput($_POST["comments"]);
