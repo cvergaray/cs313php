@@ -6,21 +6,17 @@ session_start();
 <html>
 <body>
 
-<p>
-Name: <? php echo $_SESSION["name"];?>
-<br/>
+<?php 
+echo "Name: " .  $_SESSION["name"] . "<br/>"
 
-Major:<?php echo $_SESSION["major"];?>">
-<br/>
+echo "Major: " . $_SESSION["major"] . "<br/>";
 
-Show: <?php echo $_SESSION["website"];?>">
-<br/>
+echo "Show: " . $_SESSION["website"] . "<br/>";
 
-Comment: <?php echo $_SESSION["comment"];?>
-<br/>
+echo "Comment: " . $_SESSION["comment"] . "<br/>"
 
-Gender: <?php echo $_SESSION["gender"];?>
+echo "Gender: " .  $_SESSION["gender"];
+?>
 
-</p>
 </body>
 </html>

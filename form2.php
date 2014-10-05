@@ -9,6 +9,9 @@ session_start();
 // Set session variables
 $_SESSION["name"] = "";
 $_SESSION["major"] = "";
+$_SESSION["website"] = "";
+$_SESSION["comment"] = "";
+$_SESSION["gender"] = "";
 echo "Session variables are set.";
 ?>
 
