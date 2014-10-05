@@ -5,9 +5,9 @@
     <title>Star Trek Survey</title>
   </head>
   
-  <?php	
-     session_start();
-     ?>
+//  <?php	
+//     session_start();
+//     ?>
 
   <body>  
     <div>
