@@ -1,16 +1,5 @@
 <?php	
    session_start();
-   ?>
-
-<?php
-    // Handle vars
-    if (!isset($_SESSION["name"])) $_SESSION["name"]="";
-    if (!isset($_SESSION["nameErr"])) $_SESSION["nameErr"] = "";
-    if (!isset($_SESSION["preference"])) $_SESSION["preference"] = "";
-    if (!isset($_SESSION["major"])) $_SESSION["major"] = "";
-    if (!isset($_SESSION["majorErr"])) $_SESSION["majorErr"] = "";
-    if (!isset($_SESSION["shows"])) $_SESSION["shows"] = array();
-    if (!isset($_SESSION["reasons"])) $_SESSION["reasons"] = "";
 ?>
 
 <html>
@@ -22,6 +11,12 @@
   <body>  
     <h1>Star Trek Survey</h1>
     <h2>CS 313</h2>
+
+    <?php 
+    $_SESSION["assign2_voted"] = "false";
+    print_r($_SESSION);
+    ?>
+
     <div>
       <form action = "." method="POST">
 	<table>
@@ -30,7 +25,7 @@
               Name: 
             </td>
             <td>
-              <input type = "text" size = "60" name = "name" value="<?=$name ?>"/> <?= $nameErr?>
+              <input type = "text" size = "60" name = "name"/>
             </td>
           </tr>
           <tr>
@@ -38,7 +33,7 @@
               Major: 
             </td>
             <td>
-              <input type = "text" size = "60" name = "major" value="<?=$major ?>"/> <?= $majorErr?>
+              <input type = "text" size = "60" name = "major"/>
             </td>
           </tr>
           <tr>
@@ -46,28 +41,21 @@
               <p>Do you like Star Trek?</p>
             </td>
             <td>
-              <input type = "radio" name = "radioButtons" value = "peor"   
-		     <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="peor")  echo "checked";?> > Not at all </input>
-              
-	      <input type = "radio" name = "radioButtons" value = "mal"    
-		     <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="mal")   echo "checked";?> > Not really </input>
-              
-	      <input type = "radio" name = "radioButtons" value = "bueno"  
-		     <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="bueno") echo "checked";?> > Kinda </input>
-              
-	      <input type = "radio" name = "radioButtons" value = "mejor"  
-		     <?php if (isset($_SESSION["preference"]) && $_SESSION["preference"]=="mejor") echo "checked";?> > Oh Yeah! </input>
+              <input type = "radio" name = "radioButtons" value = "1"> Not at all </input>              
+	      <input type = "radio" name = "radioButtons" value = "2"> Not really </input>              
+	      <input type = "radio" name = "radioButtons" value = "3"> Kinda </input>              
+	      <input type = "radio" name = "radioButtons" value = "4"> Oh Yeah! </input>
             </td>
           </tr>
 	</table>
 	
 	<p>Which Star Trek series do you like? &nbsp
-          <input type = "checkbox" name = "TOS" value = "tos" <?php if (in_array("tos", $_SESSION["shows"])) echo "checked"; ?> > TOS </input>
-          <input type = "checkbox" name = "TAS" value = "tas" <?php if (in_array("tas", $_SESSION["shows"])) echo "checked"; ?> > TAS </input>
-          <input type = "checkbox" name = "TNG" value = "tns" <?php if (in_array("tng", $_SESSION["shows"])) echo "checked"; ?> > TNG </input>
-          <input type = "checkbox" name = "DS9" value = "ds9" <?php if (in_array("ds9", $_SESSION["shows"])) echo "checked"; ?> > DS9 </input>
-          <input type = "checkbox" name = "VOY" value = "voy" <?php if (in_array("voy", $_SESSION["shows"])) echo "checked"; ?> > VOY </input>
-          <input type = "checkbox" name = "ENT" value = "ent" <?php if (in_array("ent", $_SESSION["shows"])) echo "checked"; ?> > ENT </input>
+          <input type = "checkbox" name = "TOS" value = "tos"> TOS </input>
+          <input type = "checkbox" name = "TAS" value = "tas"> TAS </input>
+          <input type = "checkbox" name = "TNG" value = "tns"> TNG </input>
+          <input type = "checkbox" name = "DS9" value = "ds9"> DS9 </input>
+          <input type = "checkbox" name = "VOY" value = "voy"> VOY </input>
+          <input type = "checkbox" name = "ENT" value = "ent"> ENT </input>
 	</p>
 	
 	<p>
