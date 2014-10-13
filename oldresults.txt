@@ -1,0 +1,10 @@
+<div> <p> Name: John Doe <br> 
+Major: Early Childhood Education <br> 
+Shows you like: <br> The Animated Series  <br>  <br> 
+Here is why: Cartoons are the best! <br> 
+</p> </div> <br>  <hr>  <br> 
+<div> <p> Name: Katie <br> 
+Major: Social work <br> 
+Shows you like: <br> The Original Series  <br> The Next Generation  <br> Deep Space 9  <br>  <br> 
+Here is why: I like it cause I have a good friend and brothers  who got me into it. Not to mention how awesome data and the new movies are.  <br> 
+</p> </div> <br>  <hr>  <br> 
