@@ -15,21 +15,26 @@ and open the template in the editor.
          Product Type: <select name="category">
 
             <?php
-            echo 'entering PHP section <br>';
-            // Start the session
-            echo 'Starting Session <br>';
-            session_start();
-            echo 'Including DBCONNECTION <br>';
-            include 'dbConnection.php';
-            echo 'Loading DB <br>';
-            $db = loadDB();
-            echo 'Setting up query <br>';
-            $stmt = $db->query("SELECT * FROM baked_goods");
-            echo 'Ececuting Query <br>';
-            $stmt->execute();
+            try {
+               echo 'entering PHP section <br>';
+               // Start the session
+               echo 'Starting Session <br>';
+               session_start();
+               echo 'Including DBCONNECTION <br>';
+               include 'dbConnection.php';
+               echo 'Loading DB <br>';
+               $db = loadDB();
+               echo 'Setting up query <br>';
+               $stmt = $db->query("SELECT * FROM baked_goods");
+               echo 'Ececuting Query <br>';
+               $stmt->execute();
 
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-               echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
+               while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                  echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
+               }
+            } catch (PDOException $ex) {
+               echo "Error connecting to DB. Details: $ex";
+               die();
             }
             ?>
          </select>
