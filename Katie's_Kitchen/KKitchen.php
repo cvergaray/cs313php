@@ -25,7 +25,7 @@ and open the template in the editor.
                echo 'Loading DB <br>';
                $db = loadDB();
                echo 'Setting up query <br>';
-               $stmt = $db->query("SELECT * FROM baked_goods");
+               $stmt = $db->query("SELECT * FROM baked_good");
                echo 'Ececuting Query <br>';
                $stmt->execute();
 
