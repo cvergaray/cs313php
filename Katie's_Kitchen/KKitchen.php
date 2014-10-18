@@ -17,10 +17,11 @@ and open the template in the editor.
             <?php
             // Start the session
             session_start();
-            include 'Katie\'s_Kitchen/dbConnection.php';
+            include 'dbConnection.php';
             $db = loadDB();
 
             $stmt = $db->query("SELECT * FROM baked_goods");
+            $stmt->execute();
 
             echo '<div>';
 
