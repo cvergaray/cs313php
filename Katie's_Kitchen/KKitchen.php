@@ -30,6 +30,8 @@ and open the template in the editor.
                $stmt->execute();
 
                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                 echo 'Running a row <br>';
+
                   echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
                }
             } catch (PDOException $ex) {
