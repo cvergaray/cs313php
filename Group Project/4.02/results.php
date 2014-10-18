@@ -3,9 +3,9 @@
 	include 'dbConnection.php';
 	echo '<h1>Scripture Resources</h1>';
 	$db = loadDB();
-	$book = $_POST['book'];
+	$category = $_POST['book'];
 	//Display all scriptures
-	if ($book == 'any')
+	if ($category == 'any')
 	{
 		$stmt = $db->query("SELECT * FROM scriptures");
 		
@@ -18,7 +18,7 @@
 	else
 	{
 		$stmt = $db->prepare("SELECT * FROM scriptures WHERE book=:book");
-		$stmt->bindValue(':book', $book , PDO::PARAM_STR);
+		$stmt->bindValue(':book', $category , PDO::PARAM_STR);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
 		{
