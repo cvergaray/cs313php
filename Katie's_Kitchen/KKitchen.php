@@ -15,15 +15,18 @@ and open the template in the editor.
          Product Type: <select name="category">
 
             <?php
+            echo 'entering PHP section <br>';
             // Start the session
+            echo 'Starting Session <br>';
             session_start();
+            echo 'Including DBCONNECTION <br>';
             include 'dbConnection.php';
+            echo 'Loading DB <br>';
             $db = loadDB();
-
+            echo 'Setting up query <br>';
             $stmt = $db->query("SELECT * FROM baked_goods");
+            echo 'Ececuting Query <br>';
             $stmt->execute();
-
-            echo '<div>';
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
