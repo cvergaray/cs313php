@@ -17,9 +17,9 @@ try {
       echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
    }
    echo '</select>\n';
+   echo '<input type="submit" value="Submit">\n</form>\n';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
-   echo '<input type="submit" value="Submit">\n</form>\n';
    die();
 }
 ?>
