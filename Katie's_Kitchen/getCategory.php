@@ -26,9 +26,10 @@ try {
 
    $stmt = $db->prepare($query);
 //$stmt->bindValue(':book', $category, PDO::PARAM_STR);
-   echo '<p>executing statement</p><br/>';
+   echo '<p>executing statement ' . $query . ' </p><br/>';
    $stmt->execute();
    echo '<p>Statement Executed</p><br/>';
+   var_dump($stmt);
 
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       var_dump($row);
