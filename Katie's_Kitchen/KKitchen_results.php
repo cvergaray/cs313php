@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'getCategory.php';
-include 'dbConnection.php';
+//include 'dbConnection.php';
 $db = loadDB();
 $category = $_POST['category'];
 echo '<h1>' . $category . '</h1>';
