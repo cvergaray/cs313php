@@ -13,6 +13,7 @@ $stmt = $db->prepare($query);
 //$stmt->bindValue(':book', $category, PDO::PARAM_STR);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+   var_dump($row);
    echo '<H3>' . $row['item_name'] . '</h3> <br>';
    echo 'item_description';
    echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';

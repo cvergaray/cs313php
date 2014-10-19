@@ -13,7 +13,7 @@ try {
 
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-      echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
+      echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . '</option>' . "<br>";
    }
    echo '</select>';
    echo '<input type="submit" value="Submit"></form>';
