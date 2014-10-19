@@ -21,7 +21,7 @@ try {
 
 
    echo '<p>Creating Query</p><br/>';
-   $query = "SELECT * FROM item"; // WHERE item_type = (SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
+   $query = "SELECT * FROM item WHERE item_type = 1";//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
    echo '<p>Preparing statement</p><br/>';
 
    $stmt = $db->prepare($query);
@@ -33,7 +33,7 @@ try {
    var_dump($row);
 
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      var_dump($row);
+//      var_dump($row);
       echo '<H3>' . $row['item_name'] . '</h3> <br>';
       echo 'item_description';
       echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';
