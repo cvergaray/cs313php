@@ -20,15 +20,15 @@ try {
    echo '<input type="submit" value="Submit"></form>';
 
 
-   echo '<p>Creating Query</p><br/>';
+//   echo '<p>Creating Query</p><br/>';
    $query = "SELECT * FROM item WHERE item_type = 1";//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
-   echo '<p>Preparing statement</p><br/>';
+//   echo '<p>Preparing statement</p><br/>';
 
    $stmt = $db->prepare($query);
 //$stmt->bindValue(':book', $category, PDO::PARAM_STR);
    echo '<p>executing statement ' . $query . ' </p><br/>';
    $stmt->execute();
-   echo '<p>Statement Executed</p><br/>';
+//   echo '<p>Statement Executed</p><br/>';
    var_dump($stmt);
    var_dump($row);
 
