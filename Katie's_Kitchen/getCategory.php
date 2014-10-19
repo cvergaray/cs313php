@@ -1,9 +1,8 @@
 
 <?php
-
 try {
-   echo '<form action="KKitchen_results.php" method="POST" >\n';
-   echo 'Product Type: <select name="category">\n';
+   echo '<form action="KKitchen_results.php" method="POST" >';
+   echo 'Product Type: <select name="category">';
 
    // Start the session           
    session_start();
@@ -16,8 +15,8 @@ try {
 
       echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
    }
-   echo '</select>\n';
-   echo '<input type="submit" value="Submit">\n</form>\n';
+   echo '</select>';
+   echo '<input type="submit" value="Submit"></form>';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
    die();
