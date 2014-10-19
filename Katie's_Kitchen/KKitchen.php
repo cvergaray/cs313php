@@ -16,21 +16,14 @@ and open the template in the editor.
 
             <?php
             try {
-               echo 'entering PHP section <br>';
                // Start the session
-               echo 'Starting Session <br>';
                session_start();
-               echo 'Including DBCONNECTION <br>';
                include 'dbConnection.php';
-               echo 'Loading DB <br>';
                $db = loadDB();
-               echo 'Setting up query <br>';
                $stmt = $db->query("SELECT * FROM baked_good");
-               echo 'Ececuting Query <br>';
                $stmt->execute();
 
                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                 echo 'Running a row <br>';
 
                   echo '<option value="' . $row['item_name'] . '">' . $row['item_name'] . ' </option>' . "<br>";
                }

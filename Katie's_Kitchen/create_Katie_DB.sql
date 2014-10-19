@@ -160,6 +160,7 @@ SELECT 'ITEM' AS "Create Table";
 CREATE TABLE item
 ( item_id                     INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 , item_type                   INT UNSIGNED NOT NULL
+, item_name                   CHAR(60)     NOT NULL
 , item_description            TEXT         NOT NULL
 , item_price                  INT UNSIGNED NOT NULL
 , item_picture		      BLOB
