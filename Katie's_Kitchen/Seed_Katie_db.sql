@@ -1,3 +1,5 @@
+USE katie_db;
+
 INSERT INTO `katie_db`.`item` 
 (`item_id`
 , `item_type`
@@ -131,9 +133,27 @@ INSERT INTO `katie_db`.`item`
 , `creation_date`)
  VALUES 
 (NULL
-, '1'
-, ''
-, ''
+, '4'
+, 'Banana Crumb'
+, 'Sprinkled with cinnamon and sugar, these large muffins makes a great breakfast or a great treat!'
+, '550'
+, NULL
+, UTC_DATE());
+
+
+INSERT INTO `katie_db`.`item` 
+(`item_id`
+, `item_type`
+, `item_name`
+, `item_description`
+, `item_price`
+, `item_picture`
+, `creation_date`)
+ VALUES 
+(NULL
+, '4'
+, 'Blueberry'
+, 'Can’t go wrong with the classics.'
 , '350'
 , NULL
 , UTC_DATE());
@@ -149,10 +169,28 @@ INSERT INTO `katie_db`.`item`
 , `creation_date`)
  VALUES 
 (NULL
-, '1'
-, ''
-, ''
-, '350'
+, '4'
+, 'Lemon Raspberry'
+, 'These two fruit flavors were made for each other. And these muffins are made for you!'
+, '450'
+, NULL
+, UTC_DATE());
+
+
+INSERT INTO `katie_db`.`item` 
+(`item_id`
+, `item_type`
+, `item_name`
+, `item_description`
+, `item_price`
+, `item_picture`
+, `creation_date`)
+ VALUES 
+(NULL
+, '5'
+, 'Orange Roll'
+, 'I use the Lionhouse recipe, famous in Utah. These rolls are risen twice before baking, but definitely worth the wait!'
+, '500'
 , NULL
 , UTC_DATE());
 
@@ -168,9 +206,12 @@ INSERT INTO `katie_db`.`item`
  VALUES 
 (NULL
 , '1'
-, ''
-, ''
-, '350'
+, 'Fruit Pizza'
+, 'Customizable with your favorite fruits, these fruit pizzas are a one of a kind piece of edible art.'
+, '1800'
 , NULL
 , UTC_DATE());
 
+COMMIT;
+
+SELECT * FROM item;
