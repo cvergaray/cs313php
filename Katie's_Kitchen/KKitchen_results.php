@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'Katie\'s_Kitchen/dbConnection.php';
+include 'dbConnection.php';
 $db = loadDB();
 $category = $_POST['category'];
 echo '<h1>' . $category . '</h1>';
