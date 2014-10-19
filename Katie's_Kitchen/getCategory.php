@@ -18,7 +18,6 @@ try {
    }
    echo '</select>';
    echo '<input type="submit" value="Submit"></form>';
-   }
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
    die();
