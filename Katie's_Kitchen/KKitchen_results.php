@@ -18,12 +18,11 @@ $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_
    $query = "SELECT * FROM item WHERE item_type = " . $itemNum;//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
    $stmt = $db->prepare($query);
    $stmt->execute();
-   var_dump($stmt);
    
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//      var_dump($row);
+      var_dump($row);
       echo '<H3>' . $row['item_name'] . '</h3> <br>';
-      echo 'item_description';
+      echo '<p>' . $row['item_description'] . '</p>';
       echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';
 }
 ?>
