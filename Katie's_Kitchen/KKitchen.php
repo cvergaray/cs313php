@@ -11,12 +11,12 @@ and open the template in the editor.
    </head>
    <body>
       <h1>Katie's Kitchen</h1>
-      <form action="results.php" method="POST" >
+      <form action="KKitchen_results.php" method="POST" >
          Product Type: <select name="category">
 
             <?php
             try {
-               // Start the session
+               // Start the session           
                session_start();
                include 'dbConnection.php';
                $db = loadDB();
