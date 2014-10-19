@@ -10,14 +10,21 @@ echo '<h1>' . $category . '</h1>';
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";
 
-$stmt = $db->prepare($query);
-//$stmt->bindValue(':book', $category, PDO::PARAM_STR);
-$stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-   var_dump($row);
-   echo '<H3>' . $row['item_name'] . '</h3> <br>';
-   echo 'item_description';
-   echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';
+   $query = "SELECT baked_good_id FROM baked_good WHERE item_name = '" . $category . "'";
+   $stmt = $db->prepare($query);
+   $stmt->execute();
+   $itemNum = $stmt->fetch(PDO::FETCH_ASSOC)["baked_good_id"];
+   
+   $query = "SELECT * FROM item WHERE item_type = " . $itemNum;//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
+   $stmt = $db->prepare($query);
+   $stmt->execute();
+   var_dump($stmt);
+   
+   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//      var_dump($row);
+      echo '<H3>' . $row['item_name'] . '</h3> <br>';
+      echo 'item_description';
+      echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';
 }
 ?>
 

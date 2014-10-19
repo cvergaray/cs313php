@@ -18,26 +18,6 @@ try {
    }
    echo '</select>';
    echo '<input type="submit" value="Submit"></form>';
-
-
-   
-   $query = "SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
-   $stmt = $db->prepare($query);
-   $stmt->execute();
-   var_dump($stmt);
-   var_dump($stmt->fetch(PDO::FETCH_ASSOC));
-   
-   $query = "SELECT * FROM item WHERE item_type = 1";//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
-   $stmt = $db->prepare($query);
-   $stmt->execute();
-   var_dump($stmt);
-
-   
-   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//      var_dump($row);
-      echo '<H3>' . $row['item_name'] . '</h3> <br>';
-      echo 'item_description';
-      echo 'Price: $' . ($row['price'] / 100.0) . '<br> <hr>';
    }
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
