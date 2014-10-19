@@ -25,6 +25,7 @@ try {
    $stmt = $db->prepare($query);
    $stmt->execute();
    var_dump($stmt);
+   var_dump($stmt->fetch(PDO::FETCH_ASSOC));
    
    $query = "SELECT * FROM item WHERE item_type = 1";//(SELECT baked_good_id FROM baked_good WHERE item_name = 'Pies'";
    $stmt = $db->prepare($query);
