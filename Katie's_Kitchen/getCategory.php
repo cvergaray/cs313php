@@ -20,7 +20,7 @@ try {
    echo '<input type="submit" value="Submit"></form>';
 
 
-   $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = 'Pies'";
+   $query = "SELECT * FROM item WHERE item_type := (SELECT baked_good_id FROM baked_good Where item_name := 'Pies'";
 
    $stmt = $db->prepare($query);
 //$stmt->bindValue(':book', $category, PDO::PARAM_STR);
