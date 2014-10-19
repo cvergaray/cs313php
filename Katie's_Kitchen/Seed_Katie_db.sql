@@ -205,7 +205,7 @@ INSERT INTO `katie_db`.`item`
 , `creation_date`)
  VALUES 
 (NULL
-, '1'
+, '5'
 , 'Fruit Pizza'
 , 'Customizable with your favorite fruits, these fruit pizzas are a one of a kind piece of edible art.'
 , '1800'
