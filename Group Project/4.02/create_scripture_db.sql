@@ -79,8 +79,6 @@ VALUES
 , 9
 , 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more eath.');
 
-
-
 -- Conditionally drop objects.
 SELECT 'TOPICS' AS "Drop Table";
 DROP TABLE IF EXISTS topics;
@@ -123,8 +121,6 @@ VALUES
 ( NULL
 , 'Light');
 
-
-
 -- Conditionally drop objects.
 SELECT 'SCRIPTURE_TOPIC_LOOKUP' AS "Drop Table";
 DROP TABLE IF EXISTS scripture_topic_lookup;
@@ -143,7 +139,6 @@ CREATE TABLE scripture_topic_lookup
 , KEY scripture_topic_fk2 (topic_id)
 , CONSTRAINT scripture_topic_fk2 FOREIGN KEY (topic_id) REFERENCES topics (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 INSERT INTO scripture_topic_lookup
 ( id 
@@ -190,8 +185,13 @@ SHOW TABLES;
 
 -- Display table specific information.
 SELECT * FROM scriptures;
-
 SELECT * FROM topics;
-
 SELECT * FROM scripture_topic_lookup;
 
+-- An example of a query that pulls all scriptures related to a specific topic
+SELECT "All scriptures in database relating to Light:" AS STATEMENT;
+SELECT sc.book, sc.chapter, sc.verse FROM scriptures sc INNER JOIN
+(SELECT * FROM scripture_topic_lookup stl
+ WHERE topic_id = (SELECT id FROM topics WHERE name = "Light")) derived_table
+ON sc.id = derived_table.scripture_id
+ORDER BY sc.book;
