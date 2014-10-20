@@ -23,7 +23,9 @@ $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_
       var_dump($row);
       echo '<H3>' . $row['item_name'] . '</h3> <br>';
       echo '<p>' . $row['item_description'] . '</p>';
-      echo 'Price: $' . (((int)$row['price']) / 10) . '.' . (((int)$row['price']) % 10) . '<br> <hr>';
+      $dollars = (((int)$row['price']) / 10);
+      $pennies = (((int)$row['price']) % 10);
+      echo 'Price: $' . $dollars . '.' . $pennies . '<br> <hr>';
 }
 ?>
 
