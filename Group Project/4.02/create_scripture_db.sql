@@ -80,6 +80,11 @@ VALUES
 , 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more eath.');
 
 
+
+-- Conditionally drop objects.
+SELECT 'TOPICS' AS "Drop Table";
+DROP TABLE IF EXISTS topics;
+
 -- ------------------------------------------------------------------
 -- Create and seed TOPICS table.
 -- ------------------------------------------------------------------
@@ -118,6 +123,11 @@ VALUES
 ( NULL
 , 'Light');
 
+
+
+-- Conditionally drop objects.
+SELECT 'SCRIPTURE_TOPIC_LOOKUP' AS "Drop Table";
+DROP TABLE IF EXISTS scripture_topic_lookup;
 
 -- ------------------------------------------------------------------
 -- Create SCRIPTURE_TOPIC_LOOKUP table.
@@ -170,6 +180,8 @@ VALUES
 ( NULL
 , 4
 , (SELECT id FROM topics WHERE name = 'Light'));
+
+
 -- Commit inserts.
 COMMIT;
 
