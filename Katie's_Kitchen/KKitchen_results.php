@@ -24,8 +24,8 @@ $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_
       echo '<H3>' . $row['item_name'] . '</h3> <br>';
       echo '<p>' . $row['item_description'] . '</p>';
       $cost = $row['item_price'];
-      $dollars = (int) ( $cost / 100);
-      $pennies = (int) ( $cost % 100);
+      $dollars = (int) ($cost / 100);
+      $pennies = sprintf("%02s", ($cost % 100));
 
       echo 'Price: $' . $dollars . '.' . round($pennies,2) . '<br> <hr>';
 }
