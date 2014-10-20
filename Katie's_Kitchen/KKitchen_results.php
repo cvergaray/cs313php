@@ -20,15 +20,13 @@ $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_
    $stmt->execute();
    
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      var_dump($row);
+      //var_dump($row);
       echo '<H3>' . $row['item_name'] . '</h3> <br>';
       echo '<p>' . $row['item_description'] . '</p>';
       $cost = $row['item_price'];
-      $dollars = ( $cost / 10);
-      $pennies = ( $cost % 10);
-      var_dump($cost);
-      var_dump($dollars);
-      var_dump($pennies);
+      $dollars = ( $cost / 100);
+      $pennies = ( $cost % 100);
+
       echo 'Price: $' . $dollars . '.' . $pennies . '<br> <hr>';
 }
 ?>
