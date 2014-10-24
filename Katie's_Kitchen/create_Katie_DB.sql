@@ -148,6 +148,23 @@ VALUES
 (NULL, 'Other', UTC_DATE());
 
 
+
+-- Conditionally drop objects.
+SELECT 'IMAGE' AS "Drop Table";
+DROP TABLE IF EXISTS image;
+
+-- ------------------------------------------------------------------
+-- Create ITEM table.
+-- ------------------------------------------------------------------
+SELECT 'IMAGE' AS "Create Table";
+
+CREATE TABLE image
+( image_id                    INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
+, image_name                  CHAR(60)     NOT NULL
+, image_data		      BLOB         NOT NULL
+, creation_date               DATE         NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- Conditionally drop objects.
 SELECT 'ITEM' AS "Drop Table";
 DROP TABLE IF EXISTS item;
@@ -163,10 +180,12 @@ CREATE TABLE item
 , item_name                   CHAR(60)     NOT NULL
 , item_description            TEXT         NOT NULL
 , item_price                  INT UNSIGNED NOT NULL
-, item_picture		      BLOB
+, item_picture		      INT UNSIGNED
 , creation_date               DATE         NOT NULL
-, KEY item_lab_fk1 (item_type)
+, KEY item_fk1 (item_type)
 , CONSTRAINT item_lab_fk1 FOREIGN KEY (item_type) REFERENCES baked_good (baked_good_id)
+, KEY item_fk2 (item_picture)
+, CONSTRAINT item_lab_fk1 FOREIGN KEY (item_picture) REFERENCES image (image_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
