@@ -1,23 +1,25 @@
 <?php
-include 'dbConnection.php';
-$newDB = loadDB();
-var_dump($newDB);
-if(issset($_GET['id']))
-{
+
+$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
+$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
+$dbUser = 'php';
+$dbPassword = 'php-pass-150864067';
+
+mysql_connect($dbHost, $dbUser, $dbPassword);
+mysql_select_db('katie_db');
+
+if (issset($_GET['id'])) {
    $id = mysql_real_escape_string($_GET['id']);
    var_dump($id);
-   $newQuery = $newDB->query("SELECT * FROM image WHERE image_id = $id");
-   $newQuery->execute();
+   $newQuery = mysql_query("SELECT * FROM image WHERE image_id = " . $id);
 
-   while ($newRow = $newQuery->fetch(PDO::FETCH_ASSOC)) {
+   while ($newRow = mysql_fetch_assoc($newQuery)) {
       $imageData = $row["image_data"];
       var_dump($imageData);
    }
    header("content-type: image/jpeg");
    echo $imageData;
-}
-else
-{
+} else {
    echo "error!";
 }
 ?>
