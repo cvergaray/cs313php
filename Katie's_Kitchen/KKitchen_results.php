@@ -36,3 +36,5 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    <br/>
    <input type="submit" value="back">
 </form>
+
+<img src="ShowImage.php?id=1">
