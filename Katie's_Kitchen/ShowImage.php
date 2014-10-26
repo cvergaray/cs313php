@@ -4,6 +4,10 @@ $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
 $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
 $dbUser = 'php';
 $dbPassword = 'php-pass-150864067';
+var_dump($dbHost);
+var_dump($dbPassword);
+var_dump($dbPort);
+var_dump($dbUser);
 
 mysql_connect($dbHost, $dbUser, $dbPassword);
 mysql_select_db('katie_db');
