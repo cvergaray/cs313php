@@ -185,7 +185,7 @@ CREATE TABLE item
 , KEY item_fk1 (item_type)
 , CONSTRAINT item_lab_fk1 FOREIGN KEY (item_type) REFERENCES baked_good (baked_good_id)
 , KEY item_fk2 (item_picture)
-, CONSTRAINT item_lab_fk1 FOREIGN KEY (item_picture) REFERENCES image (image_id)
+, CONSTRAINT item_lab_fk2 FOREIGN KEY (item_picture) REFERENCES image (image_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
