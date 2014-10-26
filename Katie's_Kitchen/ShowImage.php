@@ -10,7 +10,7 @@ if(issset($_GET['id']))
    while ($newRow = $newQuery->fetch(PDO::FETCH_ASSOC)) {
       $imageData = $row["image_data"];
    }
-   header("content-type: image/jpg");
+   header("content-type: image/jpeg");
    echo $imageData;
 }
 else
