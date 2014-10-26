@@ -13,6 +13,10 @@ if(issset($_GET['id']))
    header("content-type: image/jpg");
    echo $imageData;
 }
+else
+{
+   echo "error!";
+}
 ?>
 
 
