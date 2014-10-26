@@ -1,6 +1,7 @@
 <?php
 include 'dbConnection.php';
 $newDB = loadDB();
+var_dump($newDB);
 if(issset($_GET['id']))
 {
    $id = mysql_real_escape_string($_GET['id']);
