@@ -1,5 +1,4 @@
 <?php
-
 include 'dbConnection.php';
 $db = loadDB();
 

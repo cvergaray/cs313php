@@ -7,11 +7,11 @@ function loadDB() {
    $openShiftCheck = getenv('OPENSHIFT_MYSQL_DB_HOST');
    $dbName = "katie_db";
    
-    if ($openShiftCheck === null || $openShiftCheck == "")
+    if (false || $openShiftCheck === null || $openShiftCheck == "")
     {
         // Use Local
         // TO DO: Add your own local credintials
-        require("setLocalDatabaseCredentials.php");
+        // require("setLocalDatabaseCredentials.php");
     }
     else
     {
