@@ -6,7 +6,7 @@ $db = loadDB();
 $category = $_POST['category'];
 echo '<h1>' . $category . '</h1>';
 
-//Else display the scriptures from that book
+//display the items from that type
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";
 
@@ -22,7 +22,7 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    //var_dump($row);
    echo '<H3>' . $row['item_name'] . '</h3>';
-   echo '<img width=300 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
+   echo '<img width=400 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
    echo '<p>' . $row['item_description'] . '</p>';
    $cost = $row['item_price'];
    $dollars = (int) ($cost / 100);
