@@ -10,8 +10,9 @@ if ($_GET['id'] === NULL) {
 } else {
    echo ' is set';
    $id = mysql_real_escape_string($_GET['id']);
+   echo (' id= ' . $id);
    var_dump($id);
-   $newQuery = "SELECT * FROM image WHERE image_id = " . $id;
+   $newQuery = ("SELECT * FROM image WHERE image_id = " . $id);
    var_dump($newQuery);
    $newStmt = $db->prepare($newQuery);
    var_dump($newStmt);
