@@ -3,13 +3,10 @@
 var_dump($_GET);
 
 include 'dbConnection.php';
-echo "Included dbConnection.php";
-var_dump($db);
 $db = loadDB();
-var_dump($db);
-echo "Loaded DB";
 
 if (issset($_GET['id'])) {
+   echo 'is set';
    $id = mysql_real_escape_string($_GET['id']);
    var_dump($id);
    $newQuery = "SELECT * FROM image WHERE image_id = " . $id;
@@ -26,7 +23,7 @@ if (issset($_GET['id'])) {
    header("content-type: image/jpeg");
    echo $imageData;
 } else {
-   echo "error!";
+   echo 'error!';
 }
 ?>
 
