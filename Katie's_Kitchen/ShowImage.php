@@ -1,11 +1,12 @@
 <?php
 echo 'including file';
 include 'dbConnection.php';
-echo 'included';
+echo ' included';
 $db = loadDB();
+echo ' db loaded';
 
 if (issset($_GET['id'])) {
-   echo 'is set';
+   echo ' is set';
    $id = mysql_real_escape_string($_GET['id']);
    var_dump($id);
    $newQuery = "SELECT * FROM image WHERE image_id = " . $id;
