@@ -3,8 +3,9 @@
 var_dump($_GET);
 
 include dbConnection.php;
-
+echo "Included dbConnection.php";
 $db = loadDB();
+echo "Loaded DB";
 
 if (issset($_GET['id'])) {
    $id = mysql_real_escape_string($_GET['id']);
