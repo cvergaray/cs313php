@@ -22,7 +22,7 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    //var_dump($row);
    echo '<H3>' . $row['item_name'] . '</h3>';
-   echo '<img src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
+   echo '<img width=300 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
    echo '<p>' . $row['item_description'] . '</p>';
    $cost = $row['item_price'];
    $dollars = (int) ($cost / 100);
