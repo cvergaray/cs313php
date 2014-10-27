@@ -5,7 +5,9 @@ echo ' included';
 $db = loadDB();
 echo ' db loaded';
 
-if (issset($_GET['id'])) {
+if ($_GET['id'] === NULL) {
+   echo 'error!';    
+} else {
    echo ' is set';
    $id = mysql_real_escape_string($_GET['id']);
    var_dump($id);
@@ -22,8 +24,6 @@ if (issset($_GET['id'])) {
    }
    header("content-type: image/jpeg");
    echo $imageData;
-} else {
-   echo 'error!';
 }
 ?>
 
