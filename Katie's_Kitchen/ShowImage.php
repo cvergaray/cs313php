@@ -6,6 +6,7 @@ include dbConnection.php;
 echo "Included dbConnection.php";
 var_dump($db);
 $db = loadDB();
+var_dump($db);
 echo "Loaded DB";
 
 if (issset($_GET['id'])) {
