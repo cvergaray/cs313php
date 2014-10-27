@@ -11,9 +11,7 @@ if ($_GET['id'] === NULL) {
    $newStmt->execute();
 
    while ($newRow = $newStmt->fetch(PDO::FETCH_ASSOC)) {
-      echo 'found a row!';
       $imageData = $newRow["image_data"];
-      var_dump($imageData);
    }
    header("content-type: image/jpeg");
    echo $imageData;
