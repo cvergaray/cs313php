@@ -10,8 +10,11 @@ if (issset($_GET['id'])) {
    $id = mysql_real_escape_string($_GET['id']);
    var_dump($id);
    $newQuery = "SELECT * FROM image WHERE image_id = " . $id;
+   var_dump($newQuery);
    $newStmt = $db->prepare($newQuery);
+   var_dump($newStmt);
    $newStmt->execute();
+   var_dump($newStmt);
 
    while ($newRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
       $imageData = $newRow["image_data"];
