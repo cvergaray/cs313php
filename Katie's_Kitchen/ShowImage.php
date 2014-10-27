@@ -4,6 +4,7 @@ var_dump($_GET);
 
 include dbConnection.php;
 echo "Included dbConnection.php";
+var_dump($db);
 $db = loadDB();
 echo "Loaded DB";
 
