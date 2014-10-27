@@ -2,7 +2,7 @@
 
 var_dump($_GET);
 
-include dbConnection . php;
+include dbConnection.php;
 
 $db = loadDB();
 
