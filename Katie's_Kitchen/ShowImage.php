@@ -1,5 +1,7 @@
 <?php
+echo 'including file';
 include 'dbConnection.php';
+echo 'included';
 $db = loadDB();
 
 if (issset($_GET['id'])) {
