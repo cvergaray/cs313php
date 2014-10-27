@@ -9,7 +9,7 @@ var_dump($dbPassword);
 var_dump($dbPort);
 var_dump($dbUser);
 
-mysql_connect($dbHost, $dbUser, $dbPassword);
+mysql_connect($dbHost . ':' . $dbPort, $dbUser, $dbPassword);
 mysql_select_db('katie_db');
 
 if (issset($_GET['id'])) {
