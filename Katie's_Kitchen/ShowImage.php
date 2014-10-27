@@ -1,7 +1,5 @@
 <?php
 
-var_dump($_GET);
-
 include 'dbConnection.php';
 $db = loadDB();
 
