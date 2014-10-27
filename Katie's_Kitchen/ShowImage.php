@@ -2,7 +2,7 @@
 
 var_dump($_GET);
 
-include dbConnection.php;
+include 'dbConnection.php';
 echo "Included dbConnection.php";
 console_log("Now entering loadDB()");
 var_dump($db);
