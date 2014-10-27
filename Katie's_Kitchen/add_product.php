@@ -25,7 +25,7 @@ echo '<h1>New Scripture Entry</h1>';
 		}
 	
 	//Make other checkbox
-	echo '<input type="checkbox" name="topics[]" value="other">Other <input name="other"><br><br>';
+	echo '<input type="checkbox" name="topics[]" value="NULL">Other <input name="New"><br><br>';
 			
 	echo '<br><input type="submit" value="Submit">
 	</form>'; 

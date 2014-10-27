@@ -5,7 +5,7 @@ include 'getCategory.php';
 $db = loadDB();
 $category = $_POST['category'];
 echo '<h1>' . $category . '</h1>';
-
+echo '<form action="addItemToCart.php" method="POST"';
 //display the items from that type
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";
@@ -29,9 +29,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    $pennies = sprintf("%02s", ($cost % 100));
 
    echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br> <hr>';
+   echo '<input name=Quantity type="number"><input type="submit">';
 }
+echo '</form>';
 ?>
-
 <form action="KKitchen.php" method="POST" >
    <br/>
    <input type="submit" value="back">
