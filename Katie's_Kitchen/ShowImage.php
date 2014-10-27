@@ -7,11 +7,10 @@ if ($_GET['id'] === NULL) {
 } else {
    $id = $_GET['id'];
    $newQuery = ("SELECT * FROM image WHERE image_id = " . $id);
-   var_dump($newQuery);
    $newStmt = $db->prepare($newQuery);
    $newStmt->execute();
 
-   while ($newRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
+   while ($newRow = $newStmt->fetch(PDO::FETCH_ASSOC)) {
       echo 'found a row!';
       $imageData = $newRow["image_data"];
       var_dump($imageData);
