@@ -16,8 +16,8 @@ $topics = $db->query("SELECT * FROM baked_good");
 <form action="upload.php" method="POST" enctype="multipart/form-data">
    Item Name: <input name="book"><br><br>
    Price: <input name="verse"><br><br>
-   Item Description: <textarea name="content" rows="5" cols="40"></textarea><br><br>';
-   Topic(s):<br>'
+   Item Description: <textarea name="content" rows="5" cols="40"></textarea><br><br>
+   Topic(s):<br>
    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
    <input name="userfile" type="file" id="userfile"> 
    
