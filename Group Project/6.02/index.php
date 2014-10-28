@@ -152,14 +152,15 @@ function insertUser($username, $hash) {
    global $db;
 //$db = loadDB();
 
-   $query = $db->prepare('INSERT INTO users_db.user (user_name, password) VALUES (:username, :hash)');
+   $query = $db->prepare('INSERT INTO users_db.user (user_name, password) VALUES ("'. 
+           $username . '" , "' . $hash .'")');
 
    $array = array(
        'username' => $username,
        'hash' => $hash
    );
 
-   return $query->execute($array);
+   return $query->execute();
 }
 
 ?>
