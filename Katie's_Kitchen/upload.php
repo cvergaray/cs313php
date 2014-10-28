@@ -41,6 +41,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0 && isset($_POST['
    $query->execute();
 
    echo "<br>File $fileName uploaded<br>";
+   echo '<a href="Katie\'s_Kitchen/KKitchen_results.php"> Katie\'s Kitchen</a>"';
 } else {
    echo "<br>Please fill out entire form and include image<br>";
 }
