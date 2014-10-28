@@ -36,12 +36,13 @@ switch (strtolower($action)) {
          var_dump($newName);
          var_dump($checkPass);
          var_dump($newPass);
-         echo "Error in creation.";
+           echo '<script type="text/javascript"> alert("Error in creation");</script>';         
       } else {
+           echo '<script type="text/javascript"> alert("Trying to create new user.");</script>';
          $query = "SELECT *
            FROM     user
            WHERE    user_name = :" . $newName;
-         
+           echo '<script type="text/javascript"> alert("' . $query . '");</script>';         
          $stmt = $db->prepare($query);
          $stmt->execute();
          //There can only be one.
@@ -50,8 +51,7 @@ switch (strtolower($action)) {
             $success = insertUser($newName, $passwordHash);
          } else {
             echo "A record already existed, please enter a new username";
-         }
-         
+         }         
       }
       // IF SUCCESSFUL, show welcome page
       if ($success) {   // For now, just assume it worked
