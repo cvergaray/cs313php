@@ -27,6 +27,9 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0 && isset($_POST['
 
    $modifiedPrice = $_POST['item_price'] * 100;
 
+   var_dump($_POST);
+   var_dump($modifiedPrice);
+   var_dump($fileName);
    $query = "INSERT INTO item (item_id, item_type, item_name, item_description," .
            " item_price, item_picture, creation_date) " .
            "VALUES(NULL, " .
@@ -39,6 +42,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0 && isset($_POST['
 
    $query = $db->prepare($query);
    $query->execute();
+   var_dump($query->errorInfo());
 
    echo "<br>File $fileName uploaded<br>";
 } else {
