@@ -33,7 +33,11 @@ switch (strtolower($action)) {
           is_null($newPass) || 
           is_null($checkPass) || 
           $newPass != $checkPass) {
-          } else {
+         var_dump($newName);
+         var_dump($checkPass);
+         var_dump($newPass);
+         echo "Error in creation.";
+      } else {
          $query = "SELECT *
            FROM     user
            WHERE    user_name = :" . $newName;
@@ -44,10 +48,10 @@ switch (strtolower($action)) {
          if($stmt->rowCount() == 0){
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
             $success = insertUser($newName, $passwordHash);
-         } else
-         {
-            $success = false;
+         } else {
+            echo "A record already existed, please enter a new username";
          }
+         
       }
       // IF SUCCESSFUL, show welcome page
       if ($success) {   // For now, just assume it worked
