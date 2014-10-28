@@ -20,7 +20,7 @@ $db = loadDB();
 $action = getVariable("action");
 
 switch (strtolower($action)) {
-   case "createuser":
+   case "CreateUser":
       // TO DO: CHRIS
       // TO DO: Add code to create new user
       // Get hash for the password
