@@ -39,7 +39,7 @@ switch (strtolower($action)) {
            echo '<script type="text/javascript"> alert("Error in creation");</script>';         
       } else {
            echo '<script type="text/javascript"> alert("Trying to create new user.");</script>';
-         $query = "SELECT * FROM user WHERE user_name = :" . $newName . '"';
+         $query = "SELECT * FROM user WHERE user_name = '" . $newName . "'";
          echo '<script type="text/javascript"> alert("' . $query . '");</script>';         
          $stmt = $db->prepare($query);
          $stmt->execute();
