@@ -32,12 +32,12 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0 && isset($_POST['
    var_dump($fileName);
    $query = "INSERT INTO item (item_id, item_type, item_name, item_description," .
            " item_price, item_picture, creation_date) " .
-           "VALUES(NULL, " .
+           "VALUES(NULL, '" .
            $_POST['category'] .
-           ", " . $_POST['item_name'] .
-           ", " . $_POST['item_description'] .
-           ", " . $modifiedPrice .
-           ", (SELECT image_id FROM image WHERE image_name = '$fileName')" .
+           "', '" . $_POST['item_name'] .
+           "', " . $_POST['item_description'] .
+           "', " . $modifiedPrice .
+           "', (SELECT image_id FROM image WHERE image_name = '$fileName')" .
            ", UTC_DATE());";
 
    $query = $db->prepare($query);
