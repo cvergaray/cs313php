@@ -23,7 +23,7 @@ and open the template in the editor.
             </tr>
             <tr>
                <td><input type="hidden" name="action" value="CreateUser">
-                  <input type="submit" value="Create"></td>
+                  <input type="submit" value="CreateUser"></td>
             </tr>
          </table>
       </form>
