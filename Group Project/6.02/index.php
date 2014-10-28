@@ -39,10 +39,8 @@ switch (strtolower($action)) {
            echo '<script type="text/javascript"> alert("Error in creation");</script>';         
       } else {
            echo '<script type="text/javascript"> alert("Trying to create new user.");</script>';
-         $query = "SELECT *
-           FROM     user
-           WHERE    user_name = :" . $newName;
-           echo '<script type="text/javascript"> alert("' . $query . '");</script>';         
+         $query = "SELECT * FROM user WHERE user_name = :" . $newName . '"';
+         echo '<script type="text/javascript"> alert("' . $query . '");</script>';         
          $stmt = $db->prepare($query);
          $stmt->execute();
          //There can only be one.
@@ -50,7 +48,7 @@ switch (strtolower($action)) {
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
             $success = insertUser($newName, $passwordHash);
          } else {
-            echo "A record already existed, please enter a new username";
+            echo '<script type="text/javascript"> alert(""That username already existed, please enter a new one"");</script>';         
          }         
       }
       // IF SUCCESSFUL, show welcome page
