@@ -10,7 +10,7 @@ and open the template in the editor.
       <title></title>
    </head>
    <body>
-      <form method="POST">
+      <form action = "." method="POST">
          <table style="width:100%">
             <tr>
                <td>Username: <input name="name"><br></td>
