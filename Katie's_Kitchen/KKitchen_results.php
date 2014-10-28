@@ -27,8 +27,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    $cost = $row['item_price'];
    $dollars = (int) ($cost / 100);
    $pennies = sprintf("%02s", ($cost % 100));
-   echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br> <hr>';
-   echo 'Quantity desired: <input name=' . $row['item_id'] . ' type="number"><input type="submit">';
+   echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br>';
+   echo 'Quantity desired: <input name=' . $row['item_id'] . ' type="number"><input type="submit"> <br> <hr>';
 }
 echo '</form>';
 ?>
