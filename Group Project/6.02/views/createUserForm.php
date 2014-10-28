@@ -10,7 +10,7 @@ and open the template in the editor.
       <title></title>
    </head>
    <body>
-      <form action = "." method="POST">
+      <form action = "?action=CreateUser" method="POST">
          <table style="width:100%">
             <tr>
                <td>Username: <input name="name"><br></td>
@@ -23,7 +23,7 @@ and open the template in the editor.
             </tr>
             <tr>
                <td><input type="hidden" name="action" value="CreateUser">
-                  <input type="submit" value="CreateUser"></td>
+                  <input type="submit" value="Create"></td>
             </tr>
          </table>
       </form>
