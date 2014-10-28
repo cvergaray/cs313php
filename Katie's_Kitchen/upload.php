@@ -40,6 +40,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0 && isset($_POST['
            "', (SELECT image_id FROM image WHERE image_name = '$fileName')" .
            ", UTC_DATE());";
 
+   echo '<p>' . $query . '</p>';
    $query = $db->prepare($query);
    $query->execute();
    var_dump($query->errorInfo());
