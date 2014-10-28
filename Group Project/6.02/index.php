@@ -45,8 +45,10 @@ switch (strtolower($action)) {
          $stmt->execute();
          //There can only be one.
          if($stmt->rowCount() == 0){
+            echo '<script type="text/javascript"> alert("inserting user");</script>';
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
             $success = insertUser($newName, $passwordHash);
+            echo '<script type="text/javascript"> alert(' . $success . ');</script>';
          } else {
             echo '<script type="text/javascript"> alert(""That username already existed, please enter a new one"");</script>';         
          }         
