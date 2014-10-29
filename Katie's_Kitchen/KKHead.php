@@ -1,6 +1,6 @@
 <?php 
-echo "<!DOCTYPE html>\r\n";
-echo "<html lang=\"en\">\r\n";
+//echo "<!DOCTYPE html>\r\n";
+//echo "<html lang=\"en\">\r\n";
 echo "   <head>'\r\n";
 echo "      <title>Katie's Kitchen</title>\r\n";
 echo "      <meta charset=\"utf-8\">\r\n";
