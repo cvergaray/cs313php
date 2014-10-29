@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'KKhead.php';
+include 'KKHead.php';
 include 'getCategory.php';
 //include 'dbConnection.php';
 $db = loadDB();
