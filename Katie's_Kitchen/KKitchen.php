@@ -1,6 +1,6 @@
 <html>
 <?PHP
-include 'KKhead.php';
+include 'KKHead.php';
 ?>
    <body>
       <h1>Katie's Kitchen</h1>
