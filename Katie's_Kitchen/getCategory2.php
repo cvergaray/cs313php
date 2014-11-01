@@ -2,7 +2,7 @@
 
 try {
 //   echo '<form action="KKitchen_results.php" method="POST" >';
-//   echo 'Product Type: <select name="category">';
+   echo '<header>';
 
    // Start the session           
    session_start();
@@ -15,7 +15,7 @@ try {
 
       echo '<a href="KKitchen_results.php?category=' . $row['item_name'] . '">' . $row['item_name'] .'</a> &nbsp;';
    }
-   echo '<br>';
+   echo '</header>';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
    die();
