@@ -1,10 +1,15 @@
 <?php
 session_start();
 include 'KKHead.php';
-include 'getCategory.php';
+include 'getCategory2.php';
 //include 'dbConnection.php';
 $db = loadDB();
-$category = $_POST['category'];
+
+if(isset($_GET['category']))
+   $category = $_GET['category'];
+else
+   $category = $_POST['category'];
+
 echo '<h1>' . $category . '</h1>';
 echo '<form action="addItemToCart.php" method="POST">';
 //display the items from that type
