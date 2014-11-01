@@ -3,10 +3,10 @@
     Author     : Chris Vergaray
 */
 
-a:link {color:#FF0000;}      /* unvisited link */
-a:visited {color:#00FF00;}  /* visited link */
-a:hover {color:#FF00FF;}  /* mouse over link */
-a:active {color:#0000FF;}  /* selected link */
+a:link {color:#343434;}      /* unvisited link */
+a:visited {color:#3333FF;}  /* visited link */
+a:hover {color:#660066;}  /* mouse over link */
+a:active {color:#000066;}  /* selected link */
 
 
 header{ position:relative;
