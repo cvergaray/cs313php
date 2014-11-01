@@ -2,7 +2,7 @@
 
 try {
 //   echo '<form action="KKitchen_results.php" method="POST" >';
-   echo 'Product Type: <select name="category">';
+//   echo 'Product Type: <select name="category">';
 
    // Start the session           
    session_start();
