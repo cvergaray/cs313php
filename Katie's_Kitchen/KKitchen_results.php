@@ -27,6 +27,7 @@ $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    //var_dump($row);
+   echo '<div class="product">';
    echo '<H3>' . $row['item_name'] . '</h3> <br>';
    echo '<img width=400 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
    echo '<p>' . $row['item_description'] . '</p>';
@@ -35,6 +36,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    $pennies = sprintf("%02s", ($cost % 100));
    echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br>';
    echo 'Quantity desired: <input name=' . $row['item_id'] . ' type="number"><input type="submit"> <br> <hr>';
+   echo '</div>';
 }
 echo '</form>';
 ?>
