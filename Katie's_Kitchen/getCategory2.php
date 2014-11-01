@@ -20,3 +20,4 @@ try {
    echo "Error connecting to DB. Details: $ex";
    die();
 }
+?>
