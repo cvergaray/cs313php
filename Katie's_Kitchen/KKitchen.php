@@ -11,7 +11,7 @@
       <br/>
       <div class="katieProfile">
          <?php
-         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=';
+         echo '<img class="katiePic" width=400 src="ShowImage.php?id=';
          if (time() % 2 == 0) {
             echo '19';
          } else {
