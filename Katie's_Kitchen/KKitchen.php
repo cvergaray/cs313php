@@ -11,9 +11,9 @@
       <br/>
       <?php
       if (time() % 2 == 0) {
-         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=19">';
+         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=19"/>';
       } else {
-         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=20">';
+         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=20"/>';
       }
       ?>
       <br/>
