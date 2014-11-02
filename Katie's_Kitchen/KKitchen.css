@@ -117,6 +117,7 @@ h6 {
 }
 
 .katieProfile {
-   text-align: center;
-   border: 5px solid #f99245;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #f99245;
 }
