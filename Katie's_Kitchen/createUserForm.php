@@ -2,8 +2,7 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" type="text/css" href="6.02.css" media="screen">
-      <title>6.02 - Sign-up Page</title>
+      <title>Sign-up Page</title>
    </head>
    <script>
       function checkPass()
@@ -53,7 +52,7 @@
    </script>
    <body>
       <h1>Sign-up Page</h1>
-      <form  action="." method="POST" >
+      <form  action="kk_login.php" method="POST" >
          <h2>Create New Account</h2>
          <?php
          if (isset($message))
