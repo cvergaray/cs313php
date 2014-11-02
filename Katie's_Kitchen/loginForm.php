@@ -5,7 +5,7 @@
       <title>6.02 Sign-in Page</title>
    </head>
    <body>
-      <h1>Sign-in Page</h1>
+      <br><h1>Sign-in Page</h1>
       <form method="POST" action='kk_login.php'>
          <h2>Existing User</h2>
          <?php
