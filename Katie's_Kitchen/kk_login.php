@@ -10,9 +10,11 @@
 session_start();
 
 // Password functions
+phpAlert("requiring password information");
 require_once('password.php');
 
 // Connect to database
+phpAlert("Trying to connect to database");
 require_once('dbConnection.php');
 $db = loadDB();
 
