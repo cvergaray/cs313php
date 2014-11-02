@@ -129,10 +129,7 @@ function getCredentialsAreValid($username, $password) {
 
    phpAlert("building query string");
    // Query String
-   $query = "
-        SELECT *
-        FROM     system_user
-        WHERE    system_user_name = '$username';";
+   $query = " SELECT * FROM system_user WHERE system_user_name = '$username';";
 
    phpAlert("query string is: " . $username);
    
