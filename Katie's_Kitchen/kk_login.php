@@ -41,7 +41,7 @@ switch (strtolower($action)) {
          $username = $newName;
 
          // Show welcome page
-         include('views/welcomePage.php');
+         include('welcomePage.php');
       } else {
          // See if desired username was already taken
          $query = "SELECT * FROM system_user WHERE user_name = '" . $newName . "'";
@@ -56,7 +56,7 @@ switch (strtolower($action)) {
          }
 
          // (re)show sign up form
-         include('views/createUserForm.php');
+         include('createUserForm.php');
       }
       break;
 
@@ -71,24 +71,24 @@ switch (strtolower($action)) {
          // "Log the user in" / store session variable
          loginUser($username);
          // Show welcome page
-         include('views/welcomePage.php');
+         include('welcomePage.php');
       }
       // Otherwise, show login form
       else {
          $message = "Invalid username or password";
-         include('views/loginForm.php');
+         include('loginForm.php');
       }
       break;
 
    // Logout    
    case "logout":
       logoutUser();
-      include('views/loginForm.php');
+      include('loginForm.php');
       break;
 
    // Show the Sign-up form
    case "signup":
-      include('views/createUserForm.php');
+      include('createUserForm.php');
       break;
 
    // No action specified / show welcome page if logged in; otherwise, show
@@ -99,11 +99,11 @@ switch (strtolower($action)) {
          // Get current user's username
          $username = getCurrentUser();
          // Show welcome page
-         include('views/welcomePage.php');
+         include('welcomePage.php');
       }
       // Otherwise, show login form
       else {
-         include('views/loginForm.php');
+         include('loginForm.php');
       }
       break;
 }
