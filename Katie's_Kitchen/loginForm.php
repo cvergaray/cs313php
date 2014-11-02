@@ -2,7 +2,6 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" type="text/css" href="6.02.css" media="screen">
       <title>6.02 Sign-in Page</title>
    </head>
    <body>

@@ -1,5 +1,4 @@
 <?php
-phpAlert("Just loading the page");
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,11 +9,9 @@ phpAlert("Just loading the page");
 session_start();
 
 // Password functions
-phpAlert("requiring password information");
 require_once('password.php');
 
 // Connect to database
-phpAlert("Trying to connect to database");
 require_once('dbConnection.php');
 $db = loadDB();
 
@@ -137,7 +134,6 @@ function getCredentialsAreValid($username, $password) {
       $statement = $db->prepare($query);
       $statement->execute();
       $result = $statement->fetch();
-      phpAlert("Result: " . var_dump($result));
       $statement->closeCursor();
       // If user doesn't exist, return false
       if (empty($result))
@@ -145,7 +141,7 @@ function getCredentialsAreValid($username, $password) {
 
       phpAlert("Account exists, verifying password");
       // Validate using password_verify()
-      return (password_verify($password, $result['password']));
+      return (password_verify($password, $result['system_user_password']));
    } catch (PDOException $ex) {
       echo $ex->getMessage();
       exit;
