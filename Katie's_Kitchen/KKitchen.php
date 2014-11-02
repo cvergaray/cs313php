@@ -9,7 +9,6 @@
       include 'getCategory2.php';
       ?>
       <br/>
-      <div class="katieProfile">
          <?php
          if (time() % 2 == 0) {
             echo '<img width=400 src="ShowImage.php?id=19"/>';
@@ -17,7 +16,6 @@
             echo '<img width=400 src="ShowImage.php?id=20"/>';
          }
          ?>
-      </div>
       <br/>
    </body>
 </html>
