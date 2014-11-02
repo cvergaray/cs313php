@@ -8,6 +8,8 @@
 // Session support
 session_start();
 
+include 'KKHead.php';
+
 // Password functions
 require_once('password.php');
 
