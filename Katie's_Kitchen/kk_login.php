@@ -41,7 +41,9 @@ switch (strtolower($action)) {
          $username = $newName;
 
          // Show welcome page
+         phpAlert("now loading welcome page");
          include('welcomePage.php');
+         phpAlert("loaded");
       } else {
          // See if desired username was already taken
          $query = "SELECT * FROM system_user WHERE user_name = '" . $newName . "'";
@@ -54,7 +56,9 @@ switch (strtolower($action)) {
          } else {
             $message = "That username already exists, please choose a new one.";
          }
-
+         
+         phpAlert($message);
+         
          // (re)show sign up form
          include('createUserForm.php');
       }
@@ -62,6 +66,7 @@ switch (strtolower($action)) {
 
    // Login using the specified credentials
    case "login":
+      phpAlert("Trying to log in.");
       // Get username/password from form
       $username = getVariable("username");
       $password = getVariable("password");
@@ -82,12 +87,14 @@ switch (strtolower($action)) {
 
    // Logout    
    case "logout":
+      phpAlert("Logging out");
       logoutUser();
       include('loginForm.php');
       break;
 
    // Show the Sign-up form
    case "signup":
+      phpAlert("signing up new user");
       include('createUserForm.php');
       break;
 
@@ -188,4 +195,10 @@ function insertUser($username, $hash, $fName, $mName, $lName) {
    return $query->execute();
 }
 
+?>
+
+<?php
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
 ?>
