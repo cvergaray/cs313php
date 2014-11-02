@@ -24,6 +24,7 @@ $action = getVariable("action");
 switch (strtolower($action)) {
    // Create a new user account
    case "createuser":
+      phpAlert("Creating user");
       // Get username/password from form
       $newName = getVariable("name");
       $newPass = getVariable("pass");
@@ -47,6 +48,7 @@ switch (strtolower($action)) {
          include('welcomePage.php');
          phpAlert("loaded");
       } else {
+         phpAlert("Trying to load query");
          // See if desired username was already taken
          $query = "SELECT * FROM system_user WHERE user_name = '" . $newName . "'";
          $stmt = $db->prepare($query);
@@ -108,10 +110,12 @@ switch (strtolower($action)) {
          // Get current user's username
          $username = getCurrentUser();
          // Show welcome page
+         phpAlert("Loading welcome page");
          include('welcomePage.php');
       }
       // Otherwise, show login form
       else {
+         phpAlert("Loading login form");
          include('loginForm.php');
       }
       break;
