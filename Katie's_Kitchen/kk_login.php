@@ -77,6 +77,7 @@ switch (strtolower($action)) {
 
       // Check if credentials are valid
       if (getCredentialsAreValid($username, $password)) {
+         phpAlert("Credentials are valid!");
          // "Log the user in" / store session variable
          loginUser($username);
          // Show welcome page
@@ -87,6 +88,7 @@ switch (strtolower($action)) {
          $message = "Invalid username or password";
          include('loginForm.php');
       }
+      phpAlert($message);
       break;
 
    // Logout    
