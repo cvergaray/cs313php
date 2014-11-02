@@ -67,7 +67,7 @@
          <label>Middle name:</label><input type='text' name="mname"> &nbsp;
          <label>Last name:</label><input type='text' name="lname"><br><br>
          <input type='hidden' name='action' value='CreateUser'>
-         <a href=".">Return to Sign-in Page</a>
+         <a href="kk_login.php">Return to Sign-in Page</a>
          <input type="submit" onclick="return validate();" value="Create">
       </form>
    </body>
