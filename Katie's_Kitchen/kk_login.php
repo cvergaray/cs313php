@@ -86,9 +86,9 @@ switch (strtolower($action)) {
       // Otherwise, show login form
       else {
          $message = "Invalid username or password";
+         phpAlert($message);
          include('loginForm.php');
       }
-      phpAlert($message);
       break;
 
    // Logout    
@@ -137,11 +137,13 @@ function getCredentialsAreValid($username, $password) {
       $statement = $db->prepare($query);
       $statement->execute();
       $result = $statement->fetch();
+      phpAlert("Result: " . var_dump($result));
       $statement->closeCursor();
       // If user doesn't exist, return false
       if (empty($result))
          return false;
 
+      phpAlert("Account exists, verifying password");
       // Validate using password_verify()
       return (password_verify($password, $result['password']));
    } catch (PDOException $ex) {
