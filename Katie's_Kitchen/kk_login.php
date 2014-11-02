@@ -127,12 +127,15 @@ switch (strtolower($action)) {
 function getCredentialsAreValid($username, $password) {
    global $db;
 
+   phpAlert("building query string");
    // Query String
    $query = "
         SELECT *
         FROM     system_user
         WHERE    system_user_name = '$username';";
 
+   phpAlert("query string is: " . $username);
+   
    try {
       $statement = $db->prepare($query);
       $statement->execute();
