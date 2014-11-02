@@ -10,11 +10,13 @@
       ?>
       <br/>
          <?php
+         echo '<img class="katieProfile" width=400 src="ShowImage.php?id=';
          if (time() % 2 == 0) {
-            echo '<img width=400 src="ShowImage.php?id=19"/>';
+            echo '19';
          } else {
-            echo '<img width=400 src="ShowImage.php?id=20"/>';
+            echo '20';
          }
+         echo '"/>';
          ?>
       <br/>
    </body>
