@@ -29,6 +29,8 @@ if(count($saved_cart_items)>0){
     // remove the last comma
     $ids = rtrim($ids, ',');
  
+    phpAlert("IDs: $ids");
+    
     //start table
     echo "<table class='table table-hover table-responsive table-bordered'>";
  
@@ -38,10 +40,11 @@ if(count($saved_cart_items)>0){
             echo "<th>Price (USD)</th>";
             echo "<th>Action</th>";
         echo "</tr>";
- 
+         
         $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY name";
-        $stmt = $db->prepare( $query );
-        $stmt->execute();
+        $stmt = $db->prepare( $query );               
+        phpAlert("Executing query: $query");
+        phpAlert($stmt->execute());
  
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
