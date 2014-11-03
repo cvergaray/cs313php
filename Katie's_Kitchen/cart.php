@@ -3,7 +3,8 @@
 session_start();
 
 $page_title="Cart";
-include 'layout_head.php';
+
+phpAlert("Entering cart page");
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
@@ -28,8 +29,8 @@ if(count($saved_cart_items)>0){
  
     // remove the last comma
     $ids = rtrim($ids, ',');
- 
-    phpAlert("IDs: $ids");
+     
+    phpAlert($ids);
     
     //start table
     echo "<table class='table table-hover table-responsive table-bordered'>";
@@ -44,7 +45,7 @@ if(count($saved_cart_items)>0){
         $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY name";
         $stmt = $db->prepare( $query );               
         phpAlert("Executing query: $query");
-        phpAlert($stmt->execute());
+        $stmt->execute();
  
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -76,8 +77,7 @@ if(count($saved_cart_items)>0){
                         echo "<span class='glyphicon glyphicon-shopping-cart'></span> Checkout";
                     echo "</a>";
                 echo "</td>";
-            echo "</tr>";
- 
+            echo "</tr>"; 
     echo "</table>";
 }
  
@@ -87,5 +87,10 @@ else{
     echo "</div>";
 }
  
-include 'layout_foot.php';
+?>
+
+<?php
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
 ?>
