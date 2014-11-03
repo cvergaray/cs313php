@@ -43,11 +43,11 @@ switch (strtolower($action)) {
          $username = $newName;
 
          // Show welcome page
-         phpAlert("now loading welcome page");
+         //phpAlert("now loading welcome page");
          include('welcomePage.php');
-         phpAlert("loaded");
+         //phpAlert("loaded");
       } else {
-         phpAlert("Trying to load query");
+         //phpAlert("Trying to load query");
          // See if desired username was already taken
          $query = "SELECT * FROM system_user WHERE user_name = '" . $newName . "'";
          $stmt = $db->prepare($query);
@@ -69,14 +69,14 @@ switch (strtolower($action)) {
 
    // Login using the specified credentials
    case "login":
-      phpAlert("Trying to log in.");
+      //phpAlert("Trying to log in.");
       // Get username/password from form
       $username = getVariable("username");
       $password = getVariable("password");
 
       // Check if credentials are valid
       if (getCredentialsAreValid($username, $password)) {
-         phpAlert("Credentials are valid!");
+         //phpAlert("Credentials are valid!");
          // "Log the user in" / store session variable
          loginUser($username);
          // Show welcome page
@@ -92,14 +92,14 @@ switch (strtolower($action)) {
 
    // Logout    
    case "logout":
-      phpAlert("Logging out");
+      //phpAlert("Logging out");
       logoutUser();
       include('loginForm.php');
       break;
 
    // Show the Sign-up form
    case "signup":
-      phpAlert("signing up new user");
+      //phpAlert("signing up new user");
       include('createUserForm.php');
       break;
 
@@ -111,12 +111,12 @@ switch (strtolower($action)) {
          // Get current user's username
          $username = getCurrentUser();
          // Show welcome page
-         phpAlert("Loading welcome page");
+         //phpAlert("Loading welcome page");
          include('welcomePage.php');
       }
       // Otherwise, show login form
       else {
-         phpAlert("Loading login form");
+         //phpAlert("Loading login form");
          include('loginForm.php');
       }
       break;
@@ -126,11 +126,11 @@ switch (strtolower($action)) {
 function getCredentialsAreValid($username, $password) {
    global $db;
 
-   phpAlert("building query string");
+   //phpAlert("building query string");
    // Query String
    $query = "SELECT * FROM system_user WHERE system_user_name = '$username';";
 
-   phpAlert("query string is: " . $query);
+   //phpAlert("query string is: " . $query);
    
    try {
       $statement = $db->prepare($query);
@@ -141,7 +141,7 @@ function getCredentialsAreValid($username, $password) {
       if (empty($result))
          return false;
 
-      phpAlert("Account exists, verifying password");
+      //phpAlert("Account exists, verifying password");
       // Validate using password_verify()
       return (password_verify($password, $result['system_user_password']));
    } catch (PDOException $ex) {

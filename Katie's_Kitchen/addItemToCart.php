@@ -17,6 +17,8 @@ $id = isset($_GET['id']) ? $_GET['id'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
  
+phpAlert("ID: $id NAME: $name QUANTITY: $quantity");
+
 // add new item on array
 $cart_items[$id]=$quantity;
  
@@ -50,6 +52,12 @@ else{
     $_SESSION['cart_items'] = $json;
  
     // redirect
-    header('Location: KKitchen_results.php?action=added&id=' . $id . '&name=' . $name . '&category=Bread');
+    header('Location: KKitchen_results.php?action=added&id=' . $id . '&name=' . $name . '&category=Breads');
+}
+?>
+
+<?php
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 ?>
