@@ -41,6 +41,7 @@ if(array_key_exists($id, $saved_cart_items)){
 }
  
 else{
+   phpAlert("Adding new item!");
     // if cart has contents
     if(count($saved_cart_items)>0){
         foreach($saved_cart_items as $key=>$value){
@@ -49,7 +50,7 @@ else{
         }
     }
  
-    // put item to cookie
+    // put item to cart
     $json = json_encode($cart_items, true);
     $_SESSION['cart_items'] = $json;
  

@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $page_title="Cart";
 include 'layout_head.php';
  
