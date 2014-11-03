@@ -50,6 +50,6 @@ else{
     $_SESSION['cart_items'] = $json;
  
     // redirect
-    header('Location: KKitchen_results.php?action=added&id=' . $id . '&name=' . $name);
+    header('Location: KKitchen_results.php?action=added&id=' . $id . '&name=' . $name . '&category=Bread');
 }
 ?>

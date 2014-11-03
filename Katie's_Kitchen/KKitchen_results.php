@@ -31,7 +31,7 @@ else if($action=='exists'){
     echo "</div>";
 }
 
-echo '<form action="addItemToCart.php" method="GET">';
+echo '<form action="addItemToCart.php" method="GET0">';
 //display the items from that type
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";

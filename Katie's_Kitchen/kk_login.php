@@ -161,11 +161,13 @@ function getCurrentUser() {
 // Logs in the specified user
 function loginUser($username) {
    $_SESSION["currentUser"] = $username;
+   $_SESSION['authenticated'] = TRUE;
 }
 
 // Logs out the current user
 function logoutUser() {
    unset($_SESSION["currentUser"]);
+   $_SESSION['authenticated'] = FALSE;
 }
 
 // Gets whether a user is currently signed in or not
