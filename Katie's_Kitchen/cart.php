@@ -2,6 +2,7 @@
 
 session_start();
 require_once 'dbConnection.php';
+$db = loadDB();
 $page_title="Cart";
 
 phpAlert("Entering cart page");
@@ -47,6 +48,7 @@ if(count($saved_cart_items)>0){
         $stmt = $db->prepare( $query );               
         phpAlert("Executing query: $query");
         $stmt->execute();
+        phpAlert("Query executed.");
  
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
