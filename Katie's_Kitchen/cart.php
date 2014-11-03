@@ -5,7 +5,6 @@ require_once 'dbConnection.php';
 $db = loadDB();
 $page_title="Cart";
 
-phpAlert("Entering cart page");
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
@@ -23,8 +22,11 @@ $saved_cart_items = json_decode($session_object, true);
  
 if(count($saved_cart_items)>0){
     // get the product ids
+    phpAlert("getting product ids");
     $ids = "";
+    phpAlert("Creating keys array");
     $keys = array_keys($saved_cart_items);
+    phpAlert("showing keys: $keys");
     foreach($keys as $id->name){
         $ids = $ids . $id . ",";
     }
