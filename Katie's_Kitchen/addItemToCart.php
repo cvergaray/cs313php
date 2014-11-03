@@ -22,6 +22,7 @@ phpAlert("ID: $id NAME: $name QUANTITY: $quantity");
 // add new item on array
 $cart_items[$id]=$quantity;
  
+phpAlert("Reading the values from the session variable");
 // read the cookie
 $session_object = $_SESSION['cart_items'];
 $session_object = stripslashes($session_object);
@@ -34,8 +35,9 @@ if(!$saved_cart_items){
  
 // check if the item is in the array, if it is, do not add
 if(array_key_exists($id, $saved_cart_items)){
+   phpAlert("Item existed already!");
     // redirect to product list and tell the user it was already added to the cart
-    header('Location: KKitchen_results.php?action=exists&id' . $id . '&name=' . $name);
+    header('Location: KKitchen_results.php?action=added&id=' . $id . '&name=' . $name . '&category=Breads');
 }
  
 else{
