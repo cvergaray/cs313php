@@ -24,7 +24,8 @@ $saved_cart_items = json_decode($session_object, true);
 if(count($saved_cart_items)>0){
     // get the product ids
     $ids = "";
-    foreach($saved_cart_items as $id=>$name){
+    $keys = array_keys($saved_cart_items);
+    foreach($keys as $id->name){
         $ids = $ids . $id . ",";
     }
  
@@ -37,7 +38,7 @@ if(count($saved_cart_items)>0){
         // our table heading
         echo "<tr>";
             echo "<th class='textAlignLeft'>Product Name</th>";
-            //echo "<th>Quantity</th>";
+            echo "<th>Quantity</th>";
             echo "<th>Price (USD)</th>";
             echo "<th>Action</th>";
         echo "</tr>";
@@ -54,10 +55,9 @@ if(count($saved_cart_items)>0){
 
             echo "<tr>";
                 echo "<td>$item_name</td>";
+                echo "<td>{$saved_cart_items[$item_id]}</td>";
                      $cost = $row['item_price'];
-                     $dollars = (int) ($cost / 100);
-                     $pennies = sprintf("%02s", ($cost % 100));
-                echo "<td>&#36;". $dollars . '.' . round($pennies, 2) . "</td>";
+                echo "<td>&#36;". buildPriceString($cost) . "</td>";
                 echo "<td>";
                     echo "<a href='remove_from_cart.php?id={$item_id}&name={$item_name}' class='btn btn-danger'>";
                         echo "<span class='glyphicon glyphicon-remove'></span> Remove from cart";
