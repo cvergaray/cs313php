@@ -42,7 +42,8 @@ if(count($saved_cart_items)>0){
             echo "<th>Action</th>";
         echo "</tr>";
          
-        $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY name";
+        $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY name";    
+        phpAlert("Preparing query: $query");
         $stmt = $db->prepare( $query );               
         phpAlert("Executing query: $query");
         $stmt->execute();
