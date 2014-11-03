@@ -31,7 +31,6 @@ else if($action=='exists'){
     echo "</div>";
 }
 
-echo '<form action="addItemToCart.php" method="GET">';
 //display the items from that type
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";
@@ -46,7 +45,7 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-   //var_dump($row);
+   //var_dump($row);   
    echo '<div class="product">';
    echo '<H3>' . $row['item_name'] . '</h3> <br>';
    echo '<img width=400 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
@@ -55,10 +54,14 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    $dollars = (int) ($cost / 100);
    $pennies = sprintf("%02s", ($cost % 100));
    echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br>';
-   echo 'Quantity desired: <input name=' . $row['item_id'] . ' type="number"><input type="submit"> <br> <hr>';
+   echo '<form action="addItemToCart.php" method="GET">';
+   echo "<input type='hidden' name='name' value='" . $row['item_name'] . "'>";
+   echo "<input type='hidden' name='name' value='" . $row['item_id'] . "'>";
+   echo 'Quantity desired: <input name="quantity" type="number"><input type="submit"> <br> <hr>';
+   echo '</form>';
+
    echo '</div>';
 }
-echo '</form>';
 ?>
 <form action="KKitchen.php" method="POST" >
    <br/>
