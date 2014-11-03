@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+require_once 'dbConnection.php';
 $page_title="Cart";
 
 phpAlert("Entering cart page");
