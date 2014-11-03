@@ -5,13 +5,33 @@ include 'getCategory2.php';
 //include 'dbConnection.php';
 $db = loadDB();
 
+
+
 if(isset($_GET['category']))
    $category = $_GET['category'];
 else
    $category = $_POST['category'];
 
 echo '<h1>' . $category . '</h1>';
-echo '<form action="addItemToCart.php" method="POST">';
+
+// to prevent undefined index notice
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+$name = isset($_GET['name']) ? $_GET['name'] : "";
+ 
+// show messages based on given action
+if($action=='added'){
+    echo "<div class='alert alert-info'>";
+        echo "<strong>{$name}</strong> was added to your cart!";
+    echo "</div>";
+}
+ 
+else if($action=='exists'){
+    echo "<div class='alert alert-info'>";
+        echo "<strong>{$name}</strong> already exists in your cart!";
+    echo "</div>";
+}
+
+echo '<form action="addItemToCart.php" method="GET">';
 //display the items from that type
 
 $query = "SELECT * FROM item WHERE item_type = (SELECT baked_good_id FROM baked_good Where item_name = '" . $category . "'";

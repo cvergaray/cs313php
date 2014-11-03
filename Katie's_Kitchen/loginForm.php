@@ -2,7 +2,6 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <title>6.02 Sign-in Page</title>
    </head>
    <body>
       <br><h1>Sign-in Page</h1>
