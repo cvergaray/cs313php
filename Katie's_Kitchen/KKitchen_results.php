@@ -56,7 +56,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br>';
    echo '<form action="addItemToCart.php" method="GET">';
    echo "<input type='hidden' name='name' value='" . $row['item_name'] . "'>";
-   echo "<input type='hidden' name='name' value='" . $row['item_id'] . "'>";
+   echo "<input type='hidden' name='id' value='" . $row['item_id'] . "'>";
    echo 'Quantity desired: <input name="quantity" type="number"><input type="submit"> <br> <hr>';
    echo '</form>';
 
