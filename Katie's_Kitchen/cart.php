@@ -30,25 +30,21 @@ if(count($saved_cart_items)>0){
  
     // remove the last comma
     $ids = rtrim($ids, ',');
-     
-    phpAlert($ids);
-    
+         
     //start table
     echo "<table class='table table-hover table-responsive table-bordered'>";
  
         // our table heading
         echo "<tr>";
             echo "<th class='textAlignLeft'>Product Name</th>";
+            //echo "<th>Quantity</th>";
             echo "<th>Price (USD)</th>";
             echo "<th>Action</th>";
         echo "</tr>";
          
         $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY item_name";    
-        phpAlert("Preparing query: $query");
         $stmt = $db->prepare( $query );               
-        phpAlert("Executing query: $query");
         $stmt->execute();
-        phpAlert("Query executed.");
  
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -74,7 +70,7 @@ if(count($saved_cart_items)>0){
  
         echo "<tr>";
                 echo "<td><b>Total</b></td>";
-                echo "<td>&#36;{$total_price}</td>";
+                echo "<td>&#36;" . buildPriceString($total_price) . "</td>";
                 echo "<td>";
                     echo "<a href='#' class='btn btn-success'>";
                         echo "<span class='glyphicon glyphicon-shopping-cart'></span> Checkout";
@@ -96,4 +92,12 @@ else{
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
+
+function buildPriceString($cost) {
+        $dollars = (int) ($cost / 100);
+        $pennies = sprintf("%02s", ($cost % 100));
+        $pennies = ($pennies == 0) ? "00" : $pennies;
+        return "$dollars.$pennies";
+}
 ?>
+
