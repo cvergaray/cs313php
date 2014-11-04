@@ -80,6 +80,8 @@ if(count($saved_cart_items)>0){
                 echo "</td>";
             echo "</tr>"; 
     echo "</table>";
+   echo '<form action="emptyCart()" method="GET">';
+   echo '<input type="submit" value="Empty Cart"></form>';
 }
  
 else{
@@ -100,6 +102,10 @@ function buildPriceString($cost) {
         $pennies = sprintf("%02s", ($cost % 100));
         $pennies = ($pennies == 0) ? "00" : $pennies;
         return "$dollars.$pennies";
+}
+
+function emptyCart(){
+   unset($_SESSION['cart_items']);  
 }
 ?>
 
