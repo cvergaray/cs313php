@@ -113,17 +113,15 @@ echo '</form>';
 
 <?php
 function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+      if ($debug)
+         echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 
 function buildPriceString($cost) {
-   if ($debug)
-   {
         $dollars = (int) ($cost / 100);
         $pennies = sprintf("%02s", ($cost % 100));
         $pennies = ($pennies == 0) ? "00" : $pennies;
         return "$dollars.$pennies";
-   }
 }
 ?>
 
