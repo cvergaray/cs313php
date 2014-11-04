@@ -19,7 +19,7 @@ try {
    
    if($_SESSION['authenticated']){
       echo "Welcome {$_SESSION['currentUser']}!";      
-      echo '&nbsp;&nbsp;<a href="?action=logout">Sign Out</a>';
+      echo '&nbsp;&nbsp;<a href="kk_login?action=logout">Sign Out</a>';
    }   
   echo '</header>';
 } catch (PDOException $ex) {

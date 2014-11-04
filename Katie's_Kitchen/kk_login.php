@@ -168,6 +168,7 @@ function loginUser($username) {
 function logoutUser() {
    unset($_SESSION["currentUser"]);
    $_SESSION['authenticated'] = FALSE;
+   header('Location: KKitchen_results.php?&category=Breads');
 }
 
 // Gets whether a user is currently signed in or not
