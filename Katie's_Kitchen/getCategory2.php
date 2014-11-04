@@ -27,5 +27,5 @@ try {
   echo '</header>';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
-   die();
+   //die();
 }
