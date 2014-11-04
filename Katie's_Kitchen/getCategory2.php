@@ -18,7 +18,7 @@ try {
    
    if($_SESSION['authenticated']){
       echo "Welcome {$_SESSION['currentUser']}!";      
-      echo '&nbsp;&nbsp;<a href="kk_login?action=logout">Sign Out</a>';
+      echo '&nbsp;&nbsp;<a href="kk_login.php?action=logout">Sign Out</a>';
    }   
    else
    {
