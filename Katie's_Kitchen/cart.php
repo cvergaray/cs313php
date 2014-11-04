@@ -27,7 +27,8 @@ if(count($saved_cart_items)>0){
     phpAlert("Creating keys array");
     $keys = array_keys($saved_cart_items);
     phpAlert("showing keys: $keys");
-    foreach($keys as $id->name){
+    var_dump($keys);
+    foreach($keys as $id){
         $ids = $ids . $id . ",";
     }
  
