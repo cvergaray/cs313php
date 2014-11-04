@@ -1,4 +1,5 @@
 <?php
+$debug = TRUE;
 
 session_start();
 require_once 'dbConnection.php';
@@ -13,17 +14,20 @@ include 'getCategory2.php';
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
  
+phpAlert("Action: $action");
 if($action=='removed'){
     echo "<div class='alert alert-info'>";
         echo "<strong>{$name}</strong> was removed from your cart!";
     echo "</div>";
 }
- 
+
+phpAlert("reading Session object");
 // read the session object
 $session_object = $_SESSION['cart_items'];
 $session_object = stripslashes($session_object);
 $saved_cart_items = json_decode($session_object, true);
  
+phpAlert("Count of items: " . count($saved_cart_items));
 if(count($saved_cart_items)>0){
     // get the product ids
     $ids = "";
@@ -35,6 +39,7 @@ if(count($saved_cart_items)>0){
     // remove the last comma
     $ids = rtrim($ids, ',');
          
+    phpAlert("starting table");
     //start table
     echo "<table class='table table-hover table-responsive table-bordered'>";
  
@@ -107,10 +112,13 @@ function phpAlert($msg) {
 }
 
 function buildPriceString($cost) {
+   if ($debug)
+   {
         $dollars = (int) ($cost / 100);
         $pennies = sprintf("%02s", ($cost % 100));
         $pennies = ($pennies == 0) ? "00" : $pennies;
         return "$dollars.$pennies";
+   }
 }
 ?>
 
