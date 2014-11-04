@@ -112,7 +112,7 @@ switch (strtolower($action)) {
          $username = getCurrentUser();
          // Show welcome page
          //phpAlert("Loading welcome page");
-         include('welcomePage.php');
+          header('Location: KKitchen_results.php?&category=Breads');
       }
       // Otherwise, show login form
       else {
