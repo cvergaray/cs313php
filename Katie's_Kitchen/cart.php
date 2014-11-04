@@ -2,11 +2,11 @@
 
 session_start();
 require_once 'dbConnection.php';
-include 'KKHead.php';
-include 'getCategory2.php';
 $db = loadDB();
 $page_title="Cart";
 
+include 'KKHead.php';
+include 'getCategory2.php';
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";

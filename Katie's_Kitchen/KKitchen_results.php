@@ -9,8 +9,10 @@ $db = loadDB();
 
 if(isset($_GET['category']))
    $category = $_GET['category'];
-else
+elseif(isset($_POST['category']))
    $category = $_POST['category'];
+else
+   $category = "Breads";
 
 echo '<h1>' . $category . '</h1>';
 
@@ -51,9 +53,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
    echo '<img width=400 src="ShowImage.php?id=' . $row["item_picture"] . '"> <br>';
    echo '<p>' . $row['item_description'] . '</p>';
    $cost = $row['item_price'];
-   $dollars = (int) ($cost / 100);
-   $pennies = sprintf("%02s", ($cost % 100));
-   echo 'Price: $' . $dollars . '.' . round($pennies, 2) . '<br>';
+   echo 'Price: $' . buildPriceString($cost) . '<br>';
    echo '<form action="addItemToCart.php" method="GET">';
    echo "<input type='hidden' name='name' value='" . $row['item_name'] . "'>";
    echo "<input type='hidden' name='id' value='" . $row['item_id'] . "'>";
@@ -62,6 +62,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
    echo '</div>';
 }
+
+
+function buildPriceString($cost) {
+        $dollars = (int) ($cost / 100);
+        $pennies = sprintf("%02s", ($cost % 100));
+        $pennies = ($pennies == 0) ? "00" : $pennies;
+        return "$dollars.$pennies";
+}
+
 ?>
 <form action="KKitchen.php" method="POST" >
    <br/>

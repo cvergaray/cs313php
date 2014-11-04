@@ -15,7 +15,12 @@ try {
 
       echo '<a href="KKitchen_results.php?category=' . $row['item_name'] . '">' . $row['item_name'] .'</a> &nbsp;';
    }
-   echo '</header>';
+   echo '<a href="cart.php">View Cart </a>';
+   echo '<a href="kk_login.php"> Login </a>';
+   
+   if($_SESSION['authenticated'])   
+      echo "Welcome {$_SESSION['currentUser']}!";
+  echo '</header>';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
    die();
