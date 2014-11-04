@@ -9,7 +9,7 @@ $page_title="Cart";
 phpAlert("including head");
 include 'KKHead.php';
 //phpAlert("including getCategory");
-//include 'getCategory2.php';
+include 'getCategory2.php';
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
@@ -62,7 +62,6 @@ if(count($saved_cart_items)>0){
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
-            var_dump($row);
             $item_id = $row['item_id'];
             $item_name = $row['item_name'];
 
