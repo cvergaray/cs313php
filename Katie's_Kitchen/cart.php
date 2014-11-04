@@ -52,10 +52,13 @@ if(count($saved_cart_items)>0){
             echo "<th>Action</th>";
         echo "</tr>";
          
+        phpAlert("Executing query");
         $query = "SELECT * FROM item WHERE item_id IN ({$ids}) ORDER BY item_name";    
         $stmt = $db->prepare( $query );               
-        $stmt->execute();
+        $sucess = $stmt->execute();
  
+        phpAlert("Sucess: $sucess");
+        
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);            
