@@ -9,7 +9,7 @@ $page_title="Cart";
 phpAlert("including head");
 include 'KKHead.php';
 //phpAlert("including getCategory");
-include 'getCategory2.php';
+//include 'getCategory2.php';
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
