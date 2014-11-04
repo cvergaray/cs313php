@@ -12,7 +12,6 @@ try {
    $stmt->execute();
 
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
       echo '<a href="KKitchen_results.php?category=' . $row['item_name'] . '">' . $row['item_name'] .'</a> &nbsp;';
    }
    echo '<a href="cart.php">View Cart </a>';

@@ -5,7 +5,9 @@ require_once 'dbConnection.php';
 $db = loadDB();
 $page_title="Cart";
 
+phpAlert("including head");
 include 'KKHead.php';
+phpAlert("including getCategory");
 include 'getCategory2.php';
  
 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -91,7 +93,12 @@ else{
         echo "<strong>No products found</strong> in your cart!";
     echo "</div>";
 }
- 
+
+echo '<form action="KKitchen.php" method="POST" >';
+echo '   <br/>';
+echo '   <input type="submit" value="back">';
+echo '</form>';
+
 ?>
 
 <?php
@@ -107,7 +114,3 @@ function buildPriceString($cost) {
 }
 ?>
 
-<form action="KKitchen.php" method="POST" >
-   <br/>
-   <input type="submit" value="back">
-</form>
