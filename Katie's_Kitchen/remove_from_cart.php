@@ -12,7 +12,7 @@ $session_object = stripslashes($session_object);
 $saved_cart_items = json_decode($session_object, true);
  
 //If we want to delete them all, all will go in the array of deleted items
-$arrayDiff = ($name == "All") ? $saved_cart_items : array($id=>$name)  ;
+$arrayDiff = ($name == "Everything") ? $saved_cart_items : array($id=>$name)  ;
  
 // remove the item from the array
 $saved_cart_items = array_diff_key($saved_cart_items, $arrayDiff);

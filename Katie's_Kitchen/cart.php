@@ -80,7 +80,7 @@ if(count($saved_cart_items)>0){
                 echo "</td>";
             echo "</tr>"; 
     echo "</table>";
-   echo '<form action="remove_from_cart.php?id=0&name=All" method="POST">';
+   echo '<form action="remove_from_cart.php?id=0&name=Everything" method="POST">';
    echo '<input type="submit" value="Empty Cart"></form>';
 }
  
