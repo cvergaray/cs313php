@@ -22,12 +22,8 @@ $saved_cart_items = json_decode($session_object, true);
  
 if(count($saved_cart_items)>0){
     // get the product ids
-    phpAlert("getting product ids");
     $ids = "";
-    phpAlert("Creating keys array");
     $keys = array_keys($saved_cart_items);
-    phpAlert("showing keys: $keys");
-    var_dump($keys);
     foreach($keys as $id){
         $ids = $ids . $id . ",";
     }
@@ -59,7 +55,7 @@ if(count($saved_cart_items)>0){
             echo "<tr>";
                 echo "<td>$item_name</td>";
                 echo "<td>{$saved_cart_items[$item_id]}</td>";
-                     $cost = $row['item_price'];
+                     $cost = $row['item_price'] * $saved_cart_items[$item_id];
                 echo "<td>&#36;". buildPriceString($cost) . "</td>";
                 echo "<td>";
                     echo "<a href='remove_from_cart.php?id={$item_id}&name={$item_name}' class='btn btn-danger'>";
