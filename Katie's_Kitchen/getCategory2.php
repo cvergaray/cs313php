@@ -14,13 +14,16 @@ try {
    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       echo '<a href="KKitchen_results.php?category=' . $row['item_name'] . '">' . $row['item_name'] .'</a> &nbsp;';
    }
-   echo '<br><a href="cart.php">View Cart </a>';
-   echo '<a href="kk_login.php"> Login </a>';
+   echo '<br><a href="cart.php">View Cart </a>&nbsp;&nbsp;';
    
    if($_SESSION['authenticated']){
       echo "Welcome {$_SESSION['currentUser']}!";      
       echo '&nbsp;&nbsp;<a href="kk_login?action=logout">Sign Out</a>';
    }   
+   else
+   {
+      echo '<a href="kk_login.php"> Login </a>';
+   }
   echo '</header>';
 } catch (PDOException $ex) {
    echo "Error connecting to DB. Details: $ex";
