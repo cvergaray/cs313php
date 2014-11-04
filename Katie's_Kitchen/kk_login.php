@@ -80,7 +80,7 @@ switch (strtolower($action)) {
          // "Log the user in" / store session variable
          loginUser($username);
          // Show welcome page
-         include('welcomePage.php');
+          header('Location: KKitchen_results.php?&category=Breads');
       }
       // Otherwise, show login form
       else {

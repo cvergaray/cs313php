@@ -2,7 +2,7 @@
 $debug = TRUE;
 
 session_start();
-require_once 'dbConnection.php';
+require 'dbConnection.php';
 $db = loadDB();
 $page_title="Cart";
 
