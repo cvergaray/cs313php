@@ -61,7 +61,8 @@ if(count($saved_cart_items)>0){
         
         $total_price=0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            extract($row);            
+            extract($row);
+            var_dump($row);
             $item_id = $row['item_id'];
             $item_name = $row['item_name'];
 
@@ -69,6 +70,7 @@ if(count($saved_cart_items)>0){
                 echo "<td>$item_name</td>";
                 echo "<td>{$saved_cart_items[$item_id]}</td>";
                      $cost = $row['item_price'];
+                     phpAlert("cost $cost");
                 echo "<td>&#36;". buildPriceString($cost) . "</td>";
                      $cost = $cost * $saved_cart_items[$item_id];
                 echo "<td>&#36;". buildPriceString($cost) . "</td>";
