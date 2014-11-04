@@ -2,6 +2,8 @@
 
 session_start();
 require_once 'dbConnection.php';
+include 'KKHead.php';
+include 'getCategory2.php';
 $db = loadDB();
 $page_title="Cart";
 
@@ -105,3 +107,7 @@ function buildPriceString($cost) {
 }
 ?>
 
+<form action="KKitchen.php" method="POST" >
+   <br/>
+   <input type="submit" value="back">
+</form>
