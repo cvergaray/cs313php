@@ -11,8 +11,8 @@ try {
    $stmt = $db->query("SELECT * FROM baked_good");
    $stmt->execute();
 
-   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      echo '<a href="KKitchen_results.php?category=' . $row['item_name'] . '">' . $row['item_name'] .'</a> &nbsp;';
+   while ($headrow = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      echo '<a href="KKitchen_results.php?category=' . $headrow['item_name'] . '">' . $headrow['item_name'] .'</a> &nbsp;';
    }
    echo '<br><a href="cart.php">View Cart </a>&nbsp;&nbsp;';
    
