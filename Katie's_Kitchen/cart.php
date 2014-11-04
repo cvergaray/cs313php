@@ -38,7 +38,8 @@ if(count($saved_cart_items)>0){
         echo "<tr>";
             echo "<th class='textAlignLeft'>Product Name</th>";
             echo "<th>Quantity</th>";
-            echo "<th>Price (USD)</th>";
+            echo "<th>Price per Unit (USD)</th>";
+            echo "<th>Item Price (USD)</th>";
             echo "<th>Action</th>";
         echo "</tr>";
          
@@ -55,7 +56,9 @@ if(count($saved_cart_items)>0){
             echo "<tr>";
                 echo "<td>$item_name</td>";
                 echo "<td>{$saved_cart_items[$item_id]}</td>";
-                     $cost = $row['item_price'] * $saved_cart_items[$item_id];
+                     $cost = $row['item_price'];
+                echo "<td>&#36;". buildPriceString($cost) . "</td>";
+                     $cost = $cost * $saved_cart_items[$item_id];
                 echo "<td>&#36;". buildPriceString($cost) . "</td>";
                 echo "<td>";
                     echo "<a href='remove_from_cart.php?id={$item_id}&name={$item_name}' class='btn btn-danger'>";
@@ -64,7 +67,7 @@ if(count($saved_cart_items)>0){
                 echo "</td>";
             echo "</tr>";
  
-            $total_price+=$row['item_price'];
+            $total_price+=$cost;
         }
  
         echo "<tr>";
