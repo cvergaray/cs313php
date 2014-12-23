@@ -3,6 +3,7 @@
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
    $file_count = count($file_post['name']);
+   $uploadedFileNames = array();
 
    for ($i = 0; $i < $file_count; $i++) {
       $fileName = $_FILES['userfile']['name'][$i];
@@ -29,9 +30,13 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
       $query = $db->prepare($query);
       $query->execute();
 
-      echo "<br>File $fileName uploaded<br>";
+      $uploadedFileNames->add($fileName);
    }
+   $uploaded_file_count = count($uploadedFileNames);
 
+   for ($i = 0; $i < $uploaded_file_count; $i++) {
+            echo "<br>File: $fileName uploaded<br>";
+   }
    echo '<a href="add_photo.php"> Upload Another</a>';
 } else {
    echo "<br>There was an error uploading your file! Email Chris right away!<br>";
