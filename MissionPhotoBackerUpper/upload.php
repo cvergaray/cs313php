@@ -5,6 +5,9 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
    $file_count = count($file_post['name']);
    $uploadedFileNames = array();
 
+   echo 'Attemping to upload ' + $file_count + ' Files'; 
+   echo 'contents of files array:';
+   var_dump($_FILES);
    for ($i = 0; $i < $file_count; $i++) {
       $fileName = $_FILES['userfile']['name'][$i];
       $tmpName = $_FILES['userfile']['tmp_name'][$i];
