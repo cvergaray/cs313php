@@ -2,7 +2,7 @@
 
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
-   $file_count = count($file_post['name']);
+   $file_count = count($_FILES['userfile']['name']);
    $uploadedFileNames = array();
 
    echo 'Attemping to upload ' + $file_count + ' Files'; 
