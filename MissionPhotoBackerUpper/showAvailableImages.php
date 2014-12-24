@@ -9,7 +9,7 @@
 include 'dbConnection.php';
 $db = loadDB();
 
-$newQuery = ("SELECT id, name FROM image");
+$newQuery = ("SELECT image_id, image_name FROM image");
 $newStmt = $db->prepare($newQuery);
 $newStmt->execute();
 
