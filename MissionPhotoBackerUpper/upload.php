@@ -38,7 +38,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
    $uploaded_file_count = count($uploadedFileNames);
 
    for ($i = 0; $i < $uploaded_file_count; $i++) {
-            echo "<br>File: $fileName uploaded<br>";
+            echo "<br>File: $uploadedFileNames[$i] uploaded<br>";
    }
    echo '<a href="add_photo.php"> Upload Another</a>';
 } else {
